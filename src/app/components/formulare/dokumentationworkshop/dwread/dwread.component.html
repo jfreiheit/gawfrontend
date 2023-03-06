@@ -1,0 +1,49 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfdokuws">
+    <h1 id="title">{{dokumentationsworkshopTitle}}</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="card" id="card2" style="width: 80%" >
+        <div class="card-body">
+          <div id="info2">
+            <div class="row">
+              <div class="col">
+                <label for="datum" class="form-label">{{dokumentationsworkshopFragen[0].frage}}</label>
+                <input formControlName="dateControl" type="date" class="form-control" id="datum" placeholder="">
+              </div>
+
+
+              <div class="mb-3">
+                <label for="textarea1" class="form-label"> <h4> {{dokumentationsworkshopFragen[1].frage}} </h4> </label>
+                <textarea formControlName="antwortControl" class="form-control" id="textarea1" rows="5"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="textarea1" class="form-label"> <h4> {{dokumentationsworkshopFragen[2].frage}} </h4> </label>
+                <textarea formControlName="antwortControl2" class="form-control" id="textarea10" rows="5" placeholder="1. Maßnahme ... " ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="textarea1" class="form-label"> <h4> {{dokumentationsworkshopFragen[3].frage}} </h4> </label>
+                <textarea formControlName="antwortControl3" class="form-control" id="textarea11" rows="5" placeholder="zu 2.1 ..." ></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label for="textarea1" class="form-label"> <h4> {{dokumentationsworkshopFragen[4].frage}} </h4> </label>
+                <textarea formControlName="antwortControl4" class="form-control" id="textarea12" rows="5"></textarea>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <form>
+    <div class="form-group">
+      <button id="btnsavedokuws" class= 'btn btn-outline lg' value ="Aktualisieren" (click)="onSubmit()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnsavedokuws1" type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen</button>
+      <button id="btnpdfdokuws" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </div>
+  </form>
+</div>
+

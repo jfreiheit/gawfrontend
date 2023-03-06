@@ -1,0 +1,92 @@
+h1 {
+  margin-top: 3%;
+  text-align: center;
+}
+
+#vereinbarungcard1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  width: 80%;
+}
+
+#tablecard1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  width: 80%;
+  border-bottom: white;
+}
+
+.table {
+  margin-bottom: 0%;
+}
+
+h3 {
+  text-align: left;
+  margin-bottom: 5%;
+}
+
+thead {
+  background-color: lightgray;
+  color: chocolate;
+}
+
+#lastcol1, #lastcol2, #lastcol3,
+#lastcol4, #lastcol5, #lastcol6 {
+  background-color: lightgray;
+  border-radius: 6px;
+  margin-top: 24px;
+  text-align: center;
+}
+
+.mb-3 {
+  border-radius: 6px;
+}
+
+#btnsavevbamz1 {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavevbamz1:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnsavevbamz2 {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavevbamz2:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+#inputInhalt6,#inputInhalt7,#inputInhalt8,#inputInhalt9, #inputInhalt10,#inputInhalt11{
+  text-align: center;
+}
+
+#btnpdfvbamz1 {
+  margin-bottom: 2%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfvbamz1:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}

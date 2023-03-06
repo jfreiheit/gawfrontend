@@ -1,0 +1,436 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfabschg">
+   <h1>{{abschlussgespaechTitle}}</h1>
+  <form [formGroup]="form">
+   <div class="card" id="card1" style="width: 80%" >
+    <div class="card-body">
+     <div id="abschluss">
+      <div class="row">
+       <div class="col">
+        <label for="datum" class="form-label">{{abschlussgespraechFragen[0].frage}}</label>
+        <input formControlName="dateControl" type="date" class="form-control" id="datum" placeholder="">
+       </div>
+       <div class="col">
+        <label for="zeit" class="form-label">{{abschlussgespraechFragen[1].frage}}</label>
+        <input formControlName="timeControl" type="time" class="form-control" id="zeit" placeholder="">
+       </div>
+       <div class="col">
+        <label for="ort" class="form-label">{{abschlussgespraechFragen[2].frage}}</label>
+        <input formControlName="ortControl" type="input" class="form-control" id="ort" placeholder="">
+       </div>
+      </div>
+     </div>
+     <br>
+
+     <div class="card" id="card2">
+      <div class="card-header">BEM Berechtigte/r</div>
+      <div class="card-body">
+       <div class="row">
+        <div class="col">
+         <label for="coacheeName" class="form-label">{{abschlussgespraechFragen[3].frage}}</label>
+         <input formControlName="coacheeNameControl" type="text" id="coacheeName" class="form-control" placeholder="Name des BEM Berechtigten" aria-label="Name des BEM Berechtigten">
+        </div>
+        <div class="col">
+         <label for="coacheeVorname" class="form-label">{{abschlussgespraechFragen[4].frage}}</label>
+         <input formControlName="coacheeVornameControl" type="text" id="coacheeVorname" class="form-control" placeholder="Vorname des BEM Berechtigten" aria-label="Vorname des BEM Berechtigten">
+        </div>
+       </div>
+      </div>
+      <div class="mb-3">
+       <div class="row">
+        <div class="col">
+         <label for="unternehmen" class="form-label">{{abschlussgespraechFragen[5].frage}}</label>
+         <input formControlName="unternehmenControl" type="input" class="form-control" id="unternehmen" placeholder="">
+        </div>
+        <div class="col">
+         <label for="arbeitsbereich" class="form-label">{{abschlussgespraechFragen[6].frage}}</label>
+         <input formControlName="arbeitsbereichControl" type="input" class="form-control" id="arbeitsbereich" placeholder="">
+        </div>
+        <div class="col">
+         <label for="position" class="form-label">{{abschlussgespraechFragen[7].frage}}</label>
+         <input formControlName="positionControl" type="input" class="form-control" id="position" placeholder="">
+        </div>
+       </div>
+      </div>
+     </div>
+     <br>
+    <div class="card" id="card3">
+     <div class="card-header">AFCoach®</div>
+     <div class="card-body">
+      <div class="row">
+       <div class="col">
+        <label for="coacheeName" class="form-label">{{abschlussgespraechFragen[8].frage}}</label>
+        <input formControlName="coachNameControl" type="text" id="coachName" class="form-control" placeholder="Name des Coaches" aria-label="Name des Coaches">
+       </div>
+       <div class="col">
+        <label for="coacheeVorname" class="form-label">{{abschlussgespraechFragen[9].frage}}</label>
+        <input formControlName="coachVornameControl" type="text" id="coachVorname" class="form-control" placeholder="Vorname des Coaches" aria-label="Vorname des Coaches">
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+     <h3>{{abschlussgespraechFragen[10].frage}} </h3>
+     <textarea formControlName="antwortControl" class="form-control" id="textarea1" rows="5"></textarea>
+    </div>
+   <br>
+    <h3> {{abschlussgespraechFragen[11].frage}} </h3>
+
+     <br>
+
+    <div class="mb-3">
+     <div id="buttongroup1" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input formControlName="antwort2Control" value="0" type="radio" class="btn-check" id="btnradio11" autocomplete="off" >
+      <label class="btn btn-outline-dark" for="btnradio11">0</label>
+
+      <input formControlName="antwort2Control" value="1" type="radio" class="btn-check" id="btnradio12" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio12">1</label>
+
+      <input formControlName="antwort2Control" value="2" type="radio" class="btn-check" id="btnradio13" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio13">2</label>
+
+      <input formControlName="antwort2Control" value="3" type="radio" class="btn-check" id="btnradio14" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio14">3</label>
+
+      <input formControlName="antwort2Control" value="4" type="radio" class="btn-check" id="btnradio15" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio15">4</label>
+
+      <input formControlName="antwort2Control" value="5" type="radio" class="btn-check" id="btnradio16" autocomplete="off" >
+      <label class="btn btn-outline-dark" for="btnradio16">5</label>
+
+      <input formControlName="antwort2Control" value="6" type="radio" class="btn-check" id="btnradio17" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio17">6</label>
+
+      <input formControlName="antwort2Control" value="7" type="radio" class="btn-check" id="btnradio18" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio18">7</label>
+
+      <input formControlName="antwort2Control" value="8" type="radio" class="btn-check" id="btnradio19" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio19">8</label>
+
+      <input formControlName="antwort2Control" value="9" type="radio" class="btn-check" id="btnradio20" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio20">9</label>
+
+      <input formControlName="antwort2Control" value="1ß" type="radio" class="btn-check" id="btnradio21" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio21">10</label>
+     </div>
+    </div>
+
+      <div class="mb3">
+       <p>0 = völlig arbeitsunfähig</p>
+       <p>10 = derzeit die beste Arbeitsfähigkeit</p>
+      </div>
+      <br>
+      <h3> {{abschlussgespraechFragen[12].frage}}</h3>
+     <div class="mb-3">
+      <label class="form-label">Wenn Sie Ihre beste, je erreichte Arbeitsfähigkeit mit 10 Punkten bewerten: Wie viele Punkte würden
+       Sie dann für Ihre derzeitige Arbeitsfähigkeit geben?</label>
+      <div id="buttongroup2" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+       <input formControlName="antwort3Control" value="0" type="radio" class="btn-check" id="btnradio22" autocomplete="off" >
+       <label class="btn btn-outline-dark" for="btnradio22">0</label>
+
+       <input formControlName="antwort3Control" value="1" type="radio" class="btn-check" id="btnradio23" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio23">1</label>
+
+       <input formControlName="antwort3Control" value="2" type="radio" class="btn-check" id="btnradio24" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio24">2</label>
+
+       <input formControlName="antwort3Control" value="3" type="radio" class="btn-check" id="btnradio25" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio25">3</label>
+
+       <input formControlName="antwort3Control" value="4" type="radio" class="btn-check" id="btnradio26" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio26">4</label>
+
+       <input formControlName="antwort3Control" value="5" type="radio" class="btn-check" id="btnradio27" autocomplete="off" >
+       <label class="btn btn-outline-dark" for="btnradio27">5</label>
+
+       <input formControlName="antwort3Control" value="6" type="radio" class="btn-check" id="btnradio28" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio28">6</label>
+
+       <input formControlName="antwort3Control" value="7" type="radio" class="btn-check" id="btnradio29" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio29">7</label>
+
+       <input formControlName="antwort3Control" value="8" type="radio" class="btn-check" id="btnradio36" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio36">8</label>
+
+       <input formControlName="antwort3Control" value="9" type="radio" class="btn-check" id="btnradio37" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio37">9</label>
+
+       <input formControlName="antwort3Control" value="10" type="radio" class="btn-check" id="btnradio38" autocomplete="off">
+       <label class="btn btn-outline-dark" for="btnradio38">10</label>
+
+      </div>
+      </div>
+
+      <div class="mb3">
+       <p>0 = völlig arbeitsunfähig</p>
+       <p>10 = derzeit die beste Arbeitsfähigkeit</p>
+      </div>
+
+      <div class="mb-3">
+       <label for="anmerkungen" class="form-label">{{abschlussgespraechFragen[13].frage}}</label>
+       <textarea formControlName="antwort4Control" class="form-control" id="anmerkungen" rows="3"></textarea>
+      </div>
+
+      <br>
+
+      <h3>4. Arbeitsfähigkeit in Bezug auf die Arbeitsanforderungen</h3>
+
+     <label class="form-label" >{{abschlussgespraechFragen[14].frage}}</label>
+     <br>
+
+     <div id="buttongroup3" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input formControlName="antwort5Control" value="sehr schlecht" type="radio" class="btn-check" id="btnradio41" autocomplete="off" >
+      <label class="btn btn-outline-dark" for="btnradio41">sehr schlecht</label>
+
+      <input formControlName="antwort5Control" value="eher schlecht" type="radio" class="btn-check" id="btnradio42" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio42">eher schlecht</label>
+
+      <input formControlName="antwort5Control" value="mittelmäßig" type="radio" class="btn-check" id="btnradio43" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio43">mittelmäßig</label>
+
+      <input formControlName="antwort5Control" value="eher gut" type="radio" class="btn-check" id="btnradio44" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio44">eher gut</label>
+
+      <input formControlName="antwort5Control" value="sehr gut" type="radio" class="btn-check" id="btnradio45" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio45">sehr gut</label>
+     </div>
+
+     <br>
+
+     <label class="form-label" >{{abschlussgespraechFragen[15].frage}} </label>
+     <br>
+
+     <div id="buttongroup4" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input formControlName="antwort6Control" value="sehr schlecht" type="radio" class="btn-check" id="btnradio51" autocomplete="off" >
+      <label class="btn btn-outline-dark" for="btnradio51">sehr schlecht</label>
+
+      <input formControlName="antwort6Control" value="eher schlecht" type="radio" class="btn-check" id="btnradio52" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio52">eher schlecht</label>
+
+      <input formControlName="antwort6Control" value="mittelmäßig" type="radio" class="btn-check" id="btnradio53" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio53">mittelmäßig</label>
+
+      <input formControlName="antwort6Control" value="eher gut" type="radio" class="btn-check" id="btnradio54" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio54">eher gut</label>
+
+      <input formControlName="antwort6Control" value="sehr gut" type="radio" class="btn-check" id="btnradio55" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio55">sehr gut</label>
+     </div>
+
+     <br>
+
+     <label class="form-label" >{{abschlussgespraechFragen[16].frage}}</label>
+
+   <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <input formControlName="antwort7Control" value="sehr schlecht" type="radio" class="btn-check" id="btnradio61" autocomplete="off" >
+    <label class="btn btn-outline-dark" for="btnradio61">sehr schlecht</label>
+
+    <input formControlName="antwort7Control" value="eher schlecht" type="radio" class="btn-check" id="btnradio62" autocomplete="off">
+    <label class="btn btn-outline-dark" for="btnradio62">eher schlecht</label>
+
+    <input formControlName="antwort7Control" value="mittelmäßig" type="radio" class="btn-check" id="btnradio63" autocomplete="off">
+    <label class="btn btn-outline-dark" for="btnradio63">mittelmäßig</label>
+
+    <input formControlName="antwort7Control" value="eher gut" type="radio" class="btn-check" id="btnradio64" autocomplete="off">
+    <label class="btn btn-outline-dark" for="btnradio64">eher gut</label>
+
+    <input formControlName="antwort7Control" value="sehr gut" type="radio" class="btn-check" id="btnradio65" autocomplete="off">
+    <label class="btn btn-outline-dark" for="btnradio65">sehr gut</label>
+   </div>
+
+     <label class="form-label" >{{abschlussgespraechFragen[17].frage}}</label>
+
+     <div id="buttongroup5" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+      <input formControlName="antwort8Control" value="sehr schlecht" type="radio" class="btn-check" id="btnradio71" autocomplete="off" >
+      <label class="btn btn-outline-dark" for="btnradio71">sehr schlecht</label>
+
+      <input formControlName="antwort8Control" value="eher schlecht" type="radio" class="btn-check" id="btnradio72" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio72">eher schlecht</label>
+
+      <input formControlName="antwort8Control" value="mittelmäßig" type="radio" class="btn-check" id="btnradio73" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio73">mittelmäßig</label>
+
+      <input formControlName="antwort8Control" value="eher gut" type="radio" class="btn-check" id="btnradio74" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio74">eher gut</label>
+
+      <input formControlName="antwort8Control" value="sehr gut" type="radio" class="btn-check" id="btnradio75" autocomplete="off">
+      <label class="btn btn-outline-dark" for="btnradio75">sehr gut</label>
+     </div>
+
+     <!-- ab hier nächste Seite (Dilara) -->
+
+     <br>
+     <br>
+     <br>
+     <h3> 5. Das Haus der Arbeitsfähigkeit: Inwieweit fördern oder verringern die folgenden Faktoren (Stockwerke + Umfeld) Ihre Arbeitsfähigkeit?</h3>
+     <br>
+     <br>
+     <h4>Die Stockwerke:</h4>
+     <br>
+
+     <h5> a. Gesundheit/ Krankheit/ Potenziale/ Konstitution </h5>
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[18].frage}} </label>
+      <textarea formControlName="antwort9Control" class="form-control" id="textarea50" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[19].frage}}</label>
+      <textarea formControlName="antwort10Control" class="form-control" id="textarea51" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[20].frage}} </label>
+      <textarea formControlName="antwort11Control" class="form-control" id="textarea52" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[21].frage}} </label>
+      <textarea formControlName="antwort12Control" class="form-control" id="textarea53" rows="5"></textarea>
+     </div>
+
+     <br>
+     <h4>Die Stockwerke:</h4>
+     <br>
+
+     <h5> b. Kompetenz und Qualifikation </h5>
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[22].frage}} </label>
+      <textarea formControlName="antwort13Control" class="form-control" id="textarea54" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[23].frage}} </label>
+      <textarea formControlName="antwort14Control" class="form-control" id="textarea55" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[24].frage}} </label>
+      <textarea formControlName="antwort15Control" class="form-control" id="textarea56" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[25].frage}}</label>
+      <textarea formControlName="antwort16Control" class="form-control" id="textarea57" rows="5"></textarea>
+     </div>
+
+     <br>
+     <h4>Die Stockwerke:</h4>
+     <br>
+
+     <h5> c. Werte/Einstellungen/Motivation </h5>
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[26].frage}} </label>
+      <textarea formControlName="antwort17Control" class="form-control" id="textarea20" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[27].frage}} </label>
+      <textarea formControlName="antwort18Control" class="form-control" id="textarea21" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[28].frage}} </label>
+      <textarea formControlName="antwort19Control" class="form-control" id="textarea22" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[29].frage}} </label>
+      <textarea formControlName="antwort20Control" class="form-control" id="textarea23" rows="5"></textarea>
+     </div>
+
+     <br>
+     <h4>Die Stockwerke:</h4>
+     <br>
+
+     <h5> d. Kooperation der Arbeit: Arbeitsbedingungen und Führung (Gruppe, Team, Aufbau, Ablauforganisation, Mensch-Maschine) </h5>
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[30].frage}} </label>
+      <textarea formControlName="antwort21Control" class="form-control" id="textarea24" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label">{{abschlussgespraechFragen[31].frage}} </label>
+      <textarea formControlName="antwort22Control" class="form-control" id="textarea25" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[32].frage}} </label>
+      <textarea formControlName="antwort23Control" class="form-control" id="textarea26" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[33].frage}} </label>
+      <textarea formControlName="antwort24Control" class="form-control" id="textarea27" rows="5"></textarea>
+     </div>
+
+     <br>
+     <h4>Die Stockwerke:</h4>
+     <br>
+
+     <h5> e. Umfeld: regionales, familiäres, persönliches, soziales </h5>
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[34].frage}} </label>
+      <textarea formControlName="antwort25Control" class="form-control" id="textarea28" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[35].frage}} </label>
+      <textarea formControlName="antwort26Control" class="form-control" id="textarea29" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label">{{abschlussgespraechFragen[36].frage}} </label>
+      <textarea formControlName="antwort27Control" class="form-control" id="textarea30" rows="5"></textarea>
+     </div>
+
+     <div class="mb-3">
+      <label for="textarea1" class="form-label"> {{abschlussgespraechFragen[37].frage}} </label>
+      <textarea formControlName="antwort28Control" class="form-control" id="textarea31" rows="5"></textarea>
+     </div>
+
+     <br>
+     <br>
+
+     <h5> Verabredung zum Nachhaltigkeitsgespräch:</h5>
+
+       <div id="abschluss2">
+        <div class="row">
+         <div class="col">
+          <label for="datum" class="form-label">{{abschlussgespraechFragen[38].frage}}</label>
+          <input formControlName="antwort29Control" type="date" class="form-control" id="datum2" placeholder="">
+         </div>
+         <div class="col">
+          <label for="ort" class="form-label">{{abschlussgespraechFragen[39].frage}}</label>
+          <input formControlName="antwort30Control" type="input" class="form-control" id="ort2" placeholder="">
+         </div>
+        </div>
+       </div>
+
+       <div class="mb-3">
+        <label for="textarea1" class="form-label">{{abschlussgespraechFragen[40].frage}} </label>
+        <textarea formControlName="antwort31Control" class="form-control" id="textarea32" rows="7"></textarea>
+       </div>
+
+
+
+
+   </div>
+   </div>
+
+
+    </form>
+   </div>
+
+    <div>
+     <form>
+     <button id="btnsaveagp" class= 'btn btn-outline lg' value = "speichern" (click)="onSubmit()" [routerLink]="['/formulare']">speichern</button>
+     <button id="btnpdfagp" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+     </form>
+    </div>
+
+  </div>
+

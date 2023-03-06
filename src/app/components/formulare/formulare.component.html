@@ -1,0 +1,21 @@
+<div class="container" *ngIf="isLoggedIn() || isLoggedInCoachee()">
+
+  <h5 *ngIf="isLoggedIn()">Aktuell werden Formulare für {{getAktuellerCoacheeV()}} {{getAktuellerCoacheeN()}} hinzugefügt:</h5>
+  <h5 *ngIf="isLoggedInCoachee()">Die Formulare werden von Ihrem Coach ausgefüllt.
+    <br>Sie können in Ihrem Account angeschaut und als PDF runtergeladen werden.</h5>
+  <br>
+  <br>
+
+  <div *ngIf="isLoggedIn()" class="card">
+    <div class="card-header" *ngFor="let link of links" routerLinkActive="active">
+      <a [routerLink]="[link.url]">{{link.name}}</a>
+    </div>
+  </div>
+  <div *ngIf="isLoggedInCoachee()" class="card">
+    <div class="card-header" *ngFor="let link of links" routerLinkActive="active">
+      <a>{{link.name}}</a>
+    </div>
+  </div>
+    <button class="btn btn-secondary btn-block float-sm-end"
+            (click)="cancel()">Zurück</button>
+</div>

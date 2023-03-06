@@ -1,0 +1,103 @@
+h1 { margin-top: 3%;
+  text-align: center;
+}
+
+#card1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+#card3 #card4{
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#btnsavede1 {
+  margin-bottom: 2%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavede1:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+label {
+
+  margin-top: 2%;
+}
+textarea {
+  width: 90%;
+  margin-left: 5%;
+}
+.btn-group {
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#info {
+  margin-bottom: 3%;
+}
+
+#alter{
+  width: 25%;
+}
+p{
+  margin-left: 5%;
+}
+h3 {
+  margin-top: 3%;
+  margin-bottom: 1%
+}
+#addme {
+  margin-top: 2%;
+  margin-left: 40%;
+  background-color: chocolate;
+  border-color: chocolate;
+}
+
+#deleteme {
+  margin-left: 2%;
+  margin-bottom: 2%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#deleteme:hover,
+#btnsaveme:hover,
+#addme:hover {
+  background-color: white;
+  border-color: chocolate;
+  color: chocolate;
+}
+
+#btnsaveme {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfmase {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfmase:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}

@@ -1,0 +1,74 @@
+h1 {
+  text-align: center;
+  margin-top: 3%;
+}
+h4 {
+  text-align: center;
+  margin-top: 3%;
+}
+#card5 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+p{
+  text-align: justify;
+}
+#dueunterschrift {
+  margin-top: 15%;
+  margin-bottom: 2%;
+
+
+}
+#dueunterschrift2 {
+  margin-top: 15%;
+  margin-bottom: 2%;
+
+
+}
+#btnsavedsche2 {
+  margin-bottom: 5%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavedsche2:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnsavedsche3 {
+  margin-bottom: 5%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavedsche3:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnpdfdsche2 {
+  margin-bottom: 5%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfdsche2:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+

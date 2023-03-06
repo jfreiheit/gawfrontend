@@ -1,0 +1,118 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div class="row container d-flex justify-content-center">
+
+
+    <div class="container mt-3">
+      <!--<h3 class="m-3">Alle Termine</h3>
+      <div class="table-responsive">
+        <table class="m-3 table table-striped table-hover">
+          <caption>Alle <code>termine</code></caption>
+          <thead>
+          <tr>
+            <th scope="col ">Datum</th>
+            <th scope="col ">Uhrzeit</th>
+            <th scope="col ">Stunden</th>
+            <th scope="col ">Ort</th>
+            <th scope="col ">Kommentar</th>
+            <th scope="col ">Status</th>
+            <th scope="col "></th>
+            <th scope="col "></th>
+            <th scope="col "></th>
+          </tr>
+          </thead>
+          <p *ngIf="termine.length === 0">Sie haben keine Termine</p>
+          <tbody *ngIf="termine.length > 0">
+          <tr *ngFor="let coacheeTermine of termine; let i=index; ">
+            <td style="text-align: center">{{ coacheeTermine.datum }}</td>
+            <td style="text-align: center">{{ coacheeTermine.uhrzeit }}</td>
+            <td style="text-align: center">{{ coacheeTermine.stunden }}</td>
+            <td style="text-align: center">{{ coacheeTermine.ort }}</td>
+            <td>{{ coacheeTermine.inhalt }}</td>
+            <td style="text-align: center">{{ coacheeTermine.status}}</td>
+            <td>
+              <button type="button" type="" class="btn btn-default btn-sm">
+                <i-bs name="pencil"></i-bs>
+              </button>
+            </td>
+            <td>
+              <button type="button" (click)="delete(coacheeTermine._id)" class="btn btn-default btn-sm">
+                <i-bs name="trash"></i-bs>
+              </button>
+            </td>
+            <td></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>-->
+
+
+      <div class="grid-margin stretch-card">
+        <div class="card">
+          <form [formGroup]="form" (ngSubmit)="update()">
+            <div class="card-body">
+              <h3 class="card-title text-center" id="tbname">Treffen, Telefonate, schriftliche Korrespondenz</h3>
+              <hr>
+              <div class="table-responsive">
+                <table id="faqs" class="table table-hover">
+                  <thead>
+                  <tr>
+                    <th style="text-align: center">Action</th>
+                    <th style="text-align: center">Datum</th>
+                    <th style="text-align: center">Uhrzeit</th>
+                    <th style="text-align: center">Stunden</th>
+                    <th style="text-align: center">Ort</th>
+                    <th style="text-align: center">Status</th>
+                    <th></th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align: center">
+                      <select class="custom-select form-control" placeholder="Action"
+                              formControlName="aufgabe" id="Action">
+                        <option value="Telefonat">Telefonat</option>
+                        <option value="toDo">toDo</option>
+                        <option value="Kommentar">Kommentar</option>
+                        <option value="Termin">Termin</option>
+                      </select>
+                    </td>
+                    <td><input type="date" class="form-control" id="falltbdatum" placeholder=""
+                               formControlName="datum"></td>
+                    <td><input type="time" class="form-control" id="falltbzeit" placeholder=""
+                               formControlName="uhrzeit"></td>
+                    <td><input type="input" class="form-control" id="falltbstunde" placeholder="1"
+                               formControlName="stunden"></td>
+                    <td><input type="input" class="form-control" id="falltbort" placeholder="Ort"
+                               formControlName="ort"></td>
+                    <td style="text-align: center">
+                      <select class="custom-select form-control" placeholder="Status"
+                              formControlName="status" id="Status">
+                        <option value="offen">offen</option>
+                        <option value="erledigt">erledigt</option>
+                      </select>
+                    </td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="form-group row">
+                <label>KOMMENTAR</label>
+                <textarea class="form-control" id="falltbinhalt1" rows="3" formControlName="inhalt"></textarea>
+              </div>
+              <div class="row justify-content-end">
+                <button id="button" type="submit" class="col-2 btn btn-secondary">
+                  Änderungen speichern
+                </button>
+                <button type="button" class="col-2 btn btn-secondary" (click)="cancel() ">Zurück</button>
+              </div>
+            </div>
+            <br>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

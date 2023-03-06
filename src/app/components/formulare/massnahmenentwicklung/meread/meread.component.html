@@ -1,0 +1,150 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfmase">
+    <h1> {{massnahmenentwicklungTitle}} </h1>
+    <form [formGroup]="form">
+      <div class="card" id="card1" style="width: 80%" >
+        <div class="card-body">
+          <div id="info">
+            <div class="row">
+              <div class="col">
+                <label for="datum" class="form-label">{{massnahmenentwicklungFragen[0].frage}}</label>
+                <input formControlName="dateControl" type="date" class="form-control" id="datum" placeholder="">
+              </div>
+              <div class="col">
+                <label for="zeit" class="form-label">{{massnahmenentwicklungFragen[1].frage}}</label>
+                <input formControlName="antwortControl2" type="time" class="form-control" id="zeit" placeholder="">
+              </div>
+              <div class="col">
+                <label for="ort" class="form-label">{{massnahmenentwicklungFragen[2].frage}}</label>
+                <input formControlName="antwortControl3" type="input" class="form-control" id="ort" placeholder="">
+              </div>
+            </div>
+            <label for="sitzung" class="form-label">{{massnahmenentwicklungFragen[3].frage}}</label>
+            <input formControlName="antwortControl4" type="text" class="form-control" id="sitzung"
+                   placeholder="Maßnahmenentwicklung mit BEM-Berechtigter/n" readonly>
+          </div>
+
+          <div class="card" id="card2">
+            <div class="card-header">BEM Berechtigte/r</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <label for="coacheeName" class="form-label">{{massnahmenentwicklungFragen[4].frage}}</label>
+                  <input formControlName="antwortControl5" type="text" id="coacheeName" class="form-control" placeholder="Name des BEM Berechtigten" aria-label="Name des BEM Berechtigten">
+                </div>
+                <div class="col">
+                  <label for="coacheeVorname" class="form-label">{{massnahmenentwicklungFragen[5].frage}} </label>
+                  <input formControlName="antwortControl6"  type="text" id="coacheeVorname" class="form-control" placeholder="Vorname des BEM Berechtigten" aria-label="Vorname des BEM Berechtigten">
+                </div>
+                <div class="col">
+                  <label for="alter" class="form-label">{{massnahmenentwicklungFragen[6].frage}}</label>
+                  <input formControlName="antwortControl7"  type="input" class="form-control" id="alter" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col"  style="margin-left: 1%">
+                  <label for="unternehmen" class="form-label">{{massnahmenentwicklungFragen[7].frage}} </label>
+                  <input formControlName="antwortControl8" style="width: 90%" type="input" class="form-control" id="unternehmen" placeholder="">
+                </div>
+                <div class="col">
+                  <label for="arbeitsbereich" class="form-label">{{massnahmenentwicklungFragen[8].frage}}</label>
+                  <input formControlName="antwortControl9"  type="input" class="form-control" id="arbeitsbereich" placeholder="">
+                </div>
+                <div class="col">
+                  <label for="position" class="form-label">{{massnahmenentwicklungFragen[9].frage}}</label>
+                  <input formControlName="antwortControl10"  style="width: 90%" type="input" class="form-control" id="position" placeholder="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="card3">
+            <div class="card-header">AFCoach&reg;</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <label for="coacheeName" class="form-label">{{massnahmenentwicklungFragen[10].frage}}</label>
+                  <input formControlName="antwortControl11" type="text" id="coachName" class="form-control" placeholder="Name des Coaches" aria-label="Name des Coaches">
+                </div>
+                <div class="col">
+                  <label for="coacheeVorname" class="form-label">{{massnahmenentwicklungFragen[11].frage}}</label>
+                  <input formControlName="antwortControl12"  type="text" id="coachVorname" class="form-control" placeholder="Vorname des Coaches" aria-label="Vorname des Coaches">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card" id="card4">
+            <div class="card-header">Maßnahme</div>
+            <div class="card-body">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+              <div class="card" *ngFor="let item of row; let i = index">
+                <div class="card-body" >
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">{{massnahmenentwicklungFragen[12].frage}}</label>
+                      <input formControlName="antwortControl13"  type="input" class="form-control" >
+                    </div>
+                    <div class="col">
+                      <label  class="form-label">{{massnahmenentwicklungFragen[13].frage}}</label>
+                      <br>
+                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input formControlName="antwortControl14" value="rot" type="radio" class="btn-check" id="btnradio1" autocomplete="off" >
+                        <label class="btn btn-outline-danger" for="btnradio1">rot</label>
+                        <input formControlName="antwortControl14" value="gelb" type="radio" class="btn-check" id="btnradio2" autocomplete="off" >
+                        <label class="btn btn-outline-warning" for="btnradio2">gelb</label>
+                        <input formControlName="antwortControl14" value="grün" type="radio" class="btn-check"  id="btnradio3" autocomplete="off" >
+                        <label class="btn btn-outline-success" for="btnradio3">grün</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">{{massnahmenentwicklungFragen[14].frage}}</label>
+                      <input formControlName="antwortControl15" type="input" class="form-control"  >
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label">{{massnahmenentwicklungFragen[15].frage}}</label>
+                      <input formControlName="antwortControl16" type="input" class="form-control" >
+                    </div>
+                    <div class="col">
+                      <label class="form-label">{{massnahmenentwicklungFragen[16].frage}}</label>
+                      <input formControlName="antwortControl17" type="date" class="form-control" >
+                    </div>
+                    <div class="col">
+                      <label class="form-label">{{massnahmenentwicklungFragen[17].frage}}</label>
+                      <br>
+                      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input formControlName="antwortControl18" value="ja" type="radio" class="btn-check"  id="btnradio4" autocomplete="off" >
+                        <label class="btn btn-outline-success" for="btnradio4">ja</label>
+                        <input formControlName="antwortControl18" value="nein" type="radio" class="btn-check"  id="btnradio5" autocomplete="off" >
+                        <label class="btn btn-outline-danger" for="btnradio5">nein</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button  id="deleteme" class="btn btn-primary" (click) = "deleteRow(i)">Maßnahme löschen</button>
+                </div>
+              </div>
+              <button id="addme" class="btn btn-primary"  (click)="addTable()">Maßnahme hinzufügen</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <form>
+      <button id="btnsaveme" class= 'btn btn-outline lg' (click)="onSubmit()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnsaveme1" class= 'btn btn-outline lg' value = "weiter" (click)="cancel() ">Abbrechen</button>
+      <button id="btnpdfmase" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+.signature-container {
+  border-style: solid;
+  border-width: 1px;
+  background-color: lightgray;
+  width: 400px;
+  margin-left: 3%;
+}
+
+.buttons {
+  float: right;
+  margin-top: 2%;
+}
+#clearsig, #savesig {
+  margin-left: 5%;
+  padding: 10px;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+  font-size: 0.75rem;
+
+}
+#clearsig:hover, #savesig:hover{
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+  font-size: 0.75rem;
+
+}

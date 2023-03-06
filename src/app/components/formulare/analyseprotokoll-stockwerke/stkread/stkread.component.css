@@ -1,0 +1,97 @@
+#protokollcard1{
+  margin-left: 10%;
+  margin-top: 2%;
+  width: 80%;
+  margin-bottom: 5%;
+}
+input {
+  width: 90%;
+  margin-left: 5%;
+}
+#card1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+label {
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+textarea {
+  width: 90%;
+  margin-left: 5%;
+}
+h3 {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  text-align: center;
+}
+h5 {
+  text-align: center;
+}
+
+#asCard {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btnasCard1, #btnasCard2,
+#btnasCard3, #btnasCard4,
+#btnasCard5, #btnasCard6 {
+  color: chocolate;
+  background-color: #f8f9fa;
+  border: none;
+}
+#btnasCard1:hover, #btnasCard2:hover,
+#btnasCard3:hover, #btnasCard4:hover,
+#btnasCard5:hover, #btnasCard6:hover {
+  font-weight: bold;
+  color: chocolate;
+  background-color: #F8F9FA;
+  border: none;
+}
+
+#btnsavealypst {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavealypst:hover,
+#btnsavealyp1:hover,
+#btnpdfanalypst:hover
+ {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnsavealyp1 {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+
+#btnpdfanalypst {
+  margin-bottom: 5%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#title {
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%
+}

@@ -1,0 +1,108 @@
+.dn {
+  display: none;
+}
+
+h2 {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.imageCoach {
+  padding: 1%;
+  grid-column: 1/3;
+  grid-row: 1/6;
+  width: 100%;
+  height: 100%;
+}
+
+#fallarbeitcard1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+.card {
+  color: #000000;
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 500
+}
+
+.flex {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+
+@media (max-width: 992px) {
+  .padding {
+    padding: 1.5rem
+  }
+}
+
+@media (max-width: 768px) {
+  .padding {
+    padding: 1rem
+  }
+}
+
+.card .card-description {
+  margin-bottom: .875rem;
+  font-weight: 400;
+  color: #76838f
+}
+p {
+  font-size: 0.875rem;
+  margin-bottom: .5rem;
+  line-height: 1.5rem
+}
+
+.photocontainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 200px;
+  height: auto;
+}
+
+.upload-btn {
+  width: 200px;
+  margin: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  color: chocolate;
+  border-color: chocolate;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.upload-btn:hover {
+  border-color: chocolate;
+  background-color: chocolate;
+  color: white;
+}
+
+#addbtn, #deletebtn {
+  color: chocolate;
+  border-radius: 8px;
+  border: none;
+  padding: 8px;
+}
+
+
+button {
+  margin-right: 2%;
+  width: 15%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+button:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+
+

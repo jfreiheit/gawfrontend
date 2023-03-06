@@ -1,0 +1,42 @@
+#card1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  width: 80%;
+}
+
+#bild2 {
+  width: 50%;
+}
+#bild3{
+  width:50%
+}
+#bild4 {
+  width: 70%;
+}
+
+h5 {
+  background-color: lightgrey;
+  margin-top: 2%;
+}
+#notloggedin {
+  width: 70%;
+  margin-top: 20%;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+#coachbutton{
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+#coacheebutton{
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+a {
+  color: darkred;
+  text-decoration: none;
+}

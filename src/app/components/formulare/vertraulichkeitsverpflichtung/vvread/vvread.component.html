@@ -1,0 +1,135 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfvv">
+    <h1>{{vertraulichkeitsverpflichtungTitle}}</h1>
+    <div class="card" id="vvcard1">
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <p>
+            Die vorliegende Auswahl gesetzlicher Vorschriften soll Ihnen einen Überblick über das datenschutzrechtliche Regelwerk verschaffen.
+            Die Darstellung erfolgt exemplarisch und ist keineswegs vollständig. Weitere Informationen zu datenschutzrechtlichen Fragestellungen
+            erhalten Sie beim betrieblichen Datenschutzbeauftragten.
+          </p>
+
+          <h5>Begrifflichkeiten</h5>
+          <p>
+            Art. 4 Nr. 1 DS-GVO: „Personenbezogene Daten“ [sind] alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden „betroffene Person“) beziehen;
+            als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten,
+            zu einer Online-Kennung oder zu einem oder mehreren besonderen Merkmalen identifiziert werden kann, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen,
+            kulturellen oder sozialen Identität dieser natürlichen Person sind. <br><br>
+            Art. 4 Nr. 2 DS-GVO: „Verarbeitung“ [meint] jeden mit oder ohne Hilfe automatisierter Verfahren ausgeführten Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten wie das Erheben,
+            das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung,
+            den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.
+          </p>
+
+          <h5>Grundsätze der Verarbeitung</h5>
+          <p>
+            Art. 5 Abs. 1 lit. a DS-GVO: Personenbezogene Daten müssen […] auf rechtmäßige Weise, nach Treu und Glauben und in einer für die betroffene Person nachvollziehbaren Weise verarbeitet werden („Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz“). <br><br>
+            Art. 5 Abs. 1 lit. f DS-GVO: Personenbezogene Daten müssen […] in einer Weise verarbeitet werden, die eine angemessene Sicherheit der personenbezogenen Daten gewährleistet, einschließlich Schutz vor unbefugter oder unrechtmäßiger Verarbeitung und vor unbeabsichtigtem Verlust,
+            unbeabsichtigter Zerstörung oder unbeabsichtigter Schädigung durch geeignete technische und organisatorische Maßnahmen („Integrität und Vertraulichkeit“). <br><br>
+            Art. 29 DS-GVO: Der Auftragsverarbeiter und jede dem Verantwortlichen oder dem Auftragsverarbeiter unterstellte Person, die Zugang zu personenbezogenen Daten hat, dürfen diese Daten ausschließlich auf Weisung des Verantwortlichen verarbeiten, es sei denn,
+            dass sie nach dem Unionsrecht oder dem Recht der Mitgliedstaaten zur Verarbeitung verpflichtet sind. <br><br>
+            Art. 32 Abs. 2 DS-GVO: Bei der Beurteilung des angemessenen Schutzniveaus sind insbesondere die Risiken zu berücksichtigen, die mit der Verarbeitung – insbesondere durch Vernichtung, Verlust oder Veränderung, ob unbeabsichtigt oder unrechtmäßig,
+            oder unbefugte Offenlegung von beziehungsweise unbefugten Zugang zu personenbezogenen Daten, die übermittelt, gespeichert oder auf andere Weise verarbeitet wurden – verbunden sind. <br><br>
+            Art. 33 Abs. 1 Satz 1 DS-GVO: Im Falle einer Verletzung des Schutzes personenbezogener Daten meldet der Verantwortliche unverzüglich und möglichst binnen 72 Stunden, nachdem ihm die Verletzung bekannt wurde, diese der zuständigen Aufsichtsbehörde,
+            es sei denn, dass die Verletzung des Schutzes personenbezogener Daten voraussichtlich nicht zu einem Risiko für die Rechte und Freiheiten natürlicher Personen führt.
+          </p>
+
+          <h5>Haftung</h5>
+          <p>
+            Art. 82 Abs. 1 DS-GVO: Jede Person, der wegen eines Verstoßes gegen diese Verordnung ein materieller oder immaterieller Schaden entstanden ist, hat Anspruch auf Schadenersatz gegen den Verantwortlichen oder gegen den Auftragsverarbeiter. <br><br>
+            Art. 83 Abs. 1 DS-GVO: Jede Aufsichtsbehörde stellt sicher, dass die Verhängung von Geldbußen gemäß diesem Artikel für Verstöße gegen diese Verordnung in jedem Einzelfall wirksam, verhältnismäßig und abschreckend ist. <br><br>
+            § 42 BDSG (neu) <br>
+            (1) Mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe wird bestraft, wer wissentlich nicht allgemein zugängliche personenbezogene Daten einer großen Zahl von Personen, ohne hierzu berechtigt zu sein,
+          </p>
+          <ol>
+            <li><p>einem Dritten übermittelt oder</p></li>
+            <li><p>auf andere Art und Weise zugänglich macht</p></li>
+          </ol>
+          <p>
+            und hierbei gewerbsmäßig handelt. <br>
+            (2) Mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe wird bestraft, wer personenbezogene Daten, die nicht allgemein zugänglich sind,
+          </p>
+          <ol>
+            <li><p>ohne hierzu berechtigt zu sein, verarbeitet oder</p></li>
+            <li><p>durch unrichtige Angaben erschleicht</p></li>
+          </ol>
+          <p>
+            und hierbei gegen Entgelt oder in der Absicht handelt, sich oder einen anderen zu bereichern oder einen anderen zu schädigen. <br><br>
+            § 202a Abs. 1 StGB: Wer unbefugt sich oder einem anderen Zugang zu Daten, die nicht für ihn bestimmt und die gegen unberechtigten Zugang besonders gesichert sind, unter Überwindung der Zugangssicherung verschafft, wird mit Freiheitsstrafe bis zu drei Jahren oder mit Geldstrafe bestraft. <br><br>
+            § 303a Abs. 1 StGB: Wer rechtswidrig Daten löscht, unterdrückt, unbrauchbar macht oder verändert, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.
+          </p>
+
+          <h5>Fernmeldegeheimnis</h5>
+          <p>
+            § 88 TKG <br>
+            (1) Dem Fernmeldegeheimnis unterliegen der Inhalt der Telekommunikation und ihre näheren Umstände, insbesondere die Tatsache, ob jemand an einem Telekommunikationsvorgang beteiligt ist oder war.
+            Das Fernmeldegeheimnis erstreckt sich auch auf die näheren Umstände erfolgloser Verbindungsversuche. <br>
+            (2) Zur Wahrung des Fernmeldegeheimnisses ist jeder Diensteanbieter verpflichtet. Die Pflicht zur Geheimhaltung besteht auch nach dem Ende der Tätigkeit fort, durch die sie begründet worden ist. <br>
+            (3) Den nach Absatz 2 Verpflichteten ist es untersagt, sich oder anderen über das für die geschäftsmäßige Erbringung der Telekommunikationsdienste einschließlich des Schutzes ihrer
+            technischen Systeme erforderliche Maß hinaus Kenntnis vom Inhalt oder den näheren Umständen der Telekommunikation zu verschaffen.
+            Sie dürfen Kenntnisse über Tatsachen, die dem Fernmeldegeheimnis unterliegen, nur für den in Satz 1 genannten Zweck verwenden. Eine Verwendung dieser Kenntnisse für andere Zwecke, insbesondere die Weitergabe an andere,
+            ist nur zulässig, soweit dieses Gesetz oder eine andere gesetzliche Vorschrift dies vorsieht und sich dabei ausdrücklich auf Telekommunikationsvorgänge bezieht. Die Anzeigepflicht nach § 138 des Strafgesetzbuches hat Vorrang.
+          </p>
+          <br>
+          <h4>Einwilligung</h4>
+          <p>
+            Das AFCoaching® ist zudem Teil der Ausbildung des AFCoaches®. Die Ausbildung wird durch die Institut für Arbeitsfähigkeit GmbH Mainz durchgeführt. Jede/r Ausbildungsteilnehmer/in bearbeitet im Rahmen seiner/ihrer individuellen Ausbildung einen Fall.
+            Dabei wird er oder sie von einem/einer Supervisor/in unterstützt. Die Fälle werden zudem im Rahmen der Ausbildung gemeinsam von den Teilnehmenden und den Ausbildenden eines Ausbildungszuges besprochen. Für sie alle gelten die Vorschriften der DS-GVO entsprechend.
+            Die Institut für Arbeitsfähigkeit GmbH trägt als Ausbildungsträger dafür Sorge, dass von allen Beteiligten Datenschutzerklärungen vorliegen. <br>
+            Die Vorschriften zu Sanktionen sind in den Artikeln 83 und 84 der DS-GVO benannt. <br><br>
+            Eine Datenschutzverletzung kann darüber hinaus auch zu arbeitsrechtlichen Konsequenzen führen.
+          </p>
+
+          <div class="row" id="vverklaerung">
+            <p>
+              Hiermit bestätige ich, dass mein/e AFCoach® im Rahmen des Arbeitsfähigkeitscoachings® meinen Fall mit dem/der Supervisor/in besprechen darf, in der Weise, dass auch personenbezogene Daten für den Zweck der Wiederherstellung,
+              Erhaltung und Förderung meiner Arbeitsfähigkeit an den/die Supervisor/in weitergegeben werden dürfen. Zudem bin ich mit der Nutzung und Diskussion der während meines AFCoaching®-Prozesses erhobenen Daten im Rahmen der Ausbildung meines/meiner AFCoach® einverstanden.
+              Dies bezieht sich auch auf andere Ausbildungsteilnehmer/innen und die Ausbilder/innen im Ausbildungszug meines AFCoaches®. Diese Einwilligungserklärung gilt nur, wenn für alle am konkreten Ausbildungsprozess Beteiligten eine gültige und unterschriebene Datenschutzerklärung vorliegt. <br><br>
+              Diese Einwilligungserklärung ist Bestandteil des Coachingvertrags zwischen
+            </p>
+            <div class="col">
+              <label for="vvcoachee" class="form-label">BEM-Berechtige/r</label>
+              <p type="input" class="form-control" id="vvcoachee"> {{coacheeVorname}} {{coacheeName}} </p>
+            </div>
+            <div class="col">
+              <label for="vvcoach" class="form-label">und AFCoach®</label>
+              <input type="input" class="form-control" id="vvcoach" formControlName="antwortControl1" placeholder="">
+            </div>
+            <div class="col" style="width:250px">
+              <label for="inputInhalt" class="form-label">{{vertraulichkeitsverpflichtungFragen[0].frage}}</label>
+              <input type="date" class="form-control" id="inputInhalt" formControlName="date" placeholder="">
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col">
+              <label for="inputInhalt1" class="form-label">{{vertraulichkeitsverpflichtungFragen[1].frage}}</label>
+              <input type="input" class="form-control" id="inputInhalt1" formControlName="antwortControl" placeholder="">
+            </div>
+            <div class="col">
+              <label for="inputInhalt2" class="form-label">{{vertraulichkeitsverpflichtungFragen[2].frage}}</label>
+              <input type="date" class="form-control" id="inputInhalt2" formControlName="date1" placeholder="">
+            </div>
+          </div>
+
+          <div class="row" id="vvsign">
+            <div class="col">
+              <div>
+                <p>______________________________________________________</p>
+                <p>Unterschrift BEM-Berechtige/r</p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <form>
+      <button id="btnsavevv" class= 'btn btn-outline lg' (click)="onSubmit()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnsavevv1" class="btn btn-outline lg" (click)="cancel()">Abbrechen</button>
+      <button id="btnpdfvv" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.carouselExampleCaptions {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.carousel-caption{
+  background: rgba(255,255,255,0.8);
+  padding: 7px;
+  border-radius: 3px;
+}
+
+#coacheebutton{
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+h5 {
+color: black;
+}
+
+p {
+  color: black;
+  font-size: large;
+}
+a {
+  color: darkred;
+  text-decoration: none;
+}
+em{
+  font-size: small;
+}
+#coachbutton{
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+

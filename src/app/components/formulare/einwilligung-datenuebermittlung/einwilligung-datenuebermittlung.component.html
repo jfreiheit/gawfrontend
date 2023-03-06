@@ -1,0 +1,100 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfdue">
+        <h1>{{einwilligungDatenuebermittlungTitle}}</h1>
+        <h4>(Quelle: Projekt Werkzeugkasten BEM 2011)</h4>
+        <div class="card" id="duecard1">
+            <div class="card-body">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row" id=duedaten>
+                    <label for="inputInhalt" class="form-label">{{einwilligungDatenuebermittlungFragen[0].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt" formControlName="antwortControl" placeholder="{{coacheeName}}">
+                    <label for="inputInhalt1" class="form-label">{{einwilligungDatenuebermittlungFragen[1].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt1" formControlName="antwortControl1" placeholder="{{coacheeVorname}}">
+                    <label for="inputInhalt2" class="form-label">{{einwilligungDatenuebermittlungFragen[2].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt2" formControlName="antwortControl2" placeholder="">
+                    <label for="inputInhalt3" class="form-label">{{einwilligungDatenuebermittlungFragen[3].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt3" formControlName="antwortControl3" placeholder="">
+                    <label for="inputInhalt4" class="form-label">{{einwilligungDatenuebermittlungFragen[4].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt4" formControlName="antwortControl4" placeholder="">
+                    <label for="inputInhalt5" class="form-label">{{einwilligungDatenuebermittlungFragen[5].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt5" formControlName="antwortControl5" placeholder="">
+                </div>
+                <div class="row" id=dueerklärung>
+                    <p>Hiermit erkläre ich, dass ich mit der Übermittlung nachfolgend bezeichneter Daten zum Zwecke des Betrieblichen Eingliederungsmanagements (BEM) an</p>
+                <div class="col" id=duefeld>
+                    <label for="inputInhalt6" class="form-label">{{einwilligungDatenuebermittlungFragen[6].frage}}</label>
+                    <input type="text" class="form-control" id="inputInhalt6" formControlName="antwortControl6" placeholder="">
+                </div>
+                </div>
+                <div class="row" id=dueankreuz>
+                    <p>einverstanden bin:</p>
+                    <div class="form-inline">
+                        <input class="form-check-input" type="checkbox" id="dueinfog1_1">
+                        <label for="inputInhalt10" class="form-label">{{einwilligungDatenuebermittlungFragen[10].frage}}</label>
+                        <input type="date" class="form-control" id="inputInhalt10" formControlName="date" placeholder="">
+                        <label for="inputInhalt10" class="form-label"> (ggf. einschließlich Gesundheitsdaten)</label>
+                    </div>
+                    <div class="form-inline">
+                        <input class="form-check-input" type="checkbox" id="dueinfog2_1">
+                        <label for="inputInhalt11" class="form-label">{{einwilligungDatenuebermittlungFragen[11].frage}}</label>
+                        <input type="date" class="form-control" id="inputInhalt11" formControlName="date1" placeholder="">
+                        <label for="inputInhalt11" class="form-label"> (ggf. einschließlich Gesundheitsdaten)</label>
+                    </div>
+                    <div class="form-inline">
+                        <input class="form-check-input" type="checkbox" id="dueinfog3_1">
+                        <label for="inputInhalt12" class="form-label">{{einwilligungDatenuebermittlungFragen[12].frage}}</label>
+                        <input type="date" class="form-control" id="inputInhalt12" formControlName="date2" placeholder="">
+                        <label for="inputInhalt12" class="form-label"> (ggf. einschließlich Gesundheitsdaten)</label>
+                    </div>
+                    <div class="form-inline">
+                        <input class="form-check-input" type="checkbox" id="dueinfog4_1">
+                        <label for="inputInhalt7" class="form-label">{{einwilligungDatenuebermittlungFragen[7].frage}}</label>
+                        <input type="text" class="form-control" id="inputInhalt7" formControlName="antwortControl7" placeholder="">
+                        <label for="inputInhalt13" class="form-label">{{einwilligungDatenuebermittlungFragen[13].frage}}</label>
+                        <input type="date" class="form-control" id="inputInhalt13" formControlName="date3" placeholder="">
+                    </div>
+                    <div class="form-inline">
+                        <input class="form-check-input" type="checkbox" id="dueinfog5_1">
+                        <label for="dueinfog5_1" class="form-label">Anforderungsprofil des Arbeitsplatzes</label>
+                    </div>
+                    <div class="form-inline">
+                        <input class="form-check-input" type="checkbox" id="dueinfog6_1">
+                        <label for="inputInhalt8" class="form-label">{{einwilligungDatenuebermittlungFragen[8].frage}}</label>
+                        <textarea class="form-control" id="inputInhalt8" formControlName="antwortControl8" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row" id=dueabschluss>
+                    <p>Diese Einwilligungserklärung ist jederzeit widerrufbar.</p>
+                    <div class="row">
+                        <div class="col">
+                        <label for="inputInhalt9" class="form-label">{{einwilligungDatenuebermittlungFragen[9].frage}}</label>
+                        <input type="input" class="form-control" id="inputInhalt9" formControlName="antwortControl9" placeholder="">
+                        </div>
+                        <div class="col">
+                        <label for="inputInhalt14" class="form-label">{{einwilligungDatenuebermittlungFragen[14].frage}}</label>
+                        <input type="date" class="form-control" id="inputInhalt14" formControlName="date4" placeholder="">
+                        </div>
+                    </div>
+                    <div class= "row" id="dueunterschrift">
+                      <app-signaturepad></app-signaturepad>
+                        <p>____________________________________________</p>
+                        <span>Unterschrift Mitarbeiter/in</span>
+                        <br>
+                      <small style="color: darkred">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+
+                    </div>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+  <form>
+    <div class="form-group">
+      <button id="btnsavedue" class= 'btn btn-outline lg' value = "speichern" (click)="onSubmit()"
+              >Speichern</button>
+              <button id="btnpdfdue" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+      <button id="btnsavedue1" class= 'btn btn-outline lg' value = "weiter" (click)="onSubmit()"
+              [routerLink]="['/schweigepflichtentbindung']">Weiter</button>
+    </div>
+  </form>
+</div>

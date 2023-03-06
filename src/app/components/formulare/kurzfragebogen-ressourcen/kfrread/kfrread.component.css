@@ -1,0 +1,82 @@
+#rescard1 {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+#b1, #b2, #b3,
+#b4, #b5 {
+  color: chocolate;
+  background-color: #F8F9FA;
+  border: none;
+}
+
+#b1:hover, #b2:hover, #b3:hover,
+#b4:hover, #b5:hover {
+  font-weight: bold;
+  color: chocolate;
+  background-color: #F8F9FA;
+  border: none;
+}
+
+label {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.btn-group {
+  margin-left: 5%;
+}
+
+p {
+  margin-top: 10%;
+}
+
+.title {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.kriteriumnr {
+  font-size: 10px;
+  margin: auto;
+}
+
+#btnsavekzfbr {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavekzfbr:hover, #btnpdfkzfbr:hover,
+#btnabbr:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnpdfkzfbr {
+  margin-bottom: 2%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnabbr {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+.btn-outline-dark{
+  margin: 0.5%;
+}

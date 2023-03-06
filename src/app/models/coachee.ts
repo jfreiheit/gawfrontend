@@ -1,0 +1,26 @@
+export interface Coachee {
+  _id: Number,
+  email: string,
+  password: string,
+  name: string,
+  vorname: string,
+  firmenname: string,
+  firmen_str: string,
+  firmen_nr: string,
+  firmen_ort: string,
+  firmen_plz: string,
+  user: string,
+  secret: string,
+  //optional
+  arbeitgeber_str: string,
+  arbeitgeber_nr: string,
+  arbeitgeber_ort: string,
+  arbeitgeber_plz: string,
+  telefonnummer: string,
+  privat_str: string,
+  privat_nr: string,
+  privat_ort: string,
+  privat_plz: string,
+  mobil: string,
+  privat_email: string
+}

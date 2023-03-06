@@ -1,0 +1,103 @@
+  <body *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+  <div class="container" id="container">
+    <div class="card-header" id="headerstyle">
+    <h4 id="überschrift" *ngIf="isLoggedIn()">Dein Fall zu {{coachee?.vorname}} {{coachee?.name}}:</h4>
+      <h4 id="überschrift1" *ngIf="isLoggedInCoachee()">Deine Daten:</h4>
+    </div>
+      <div class="card-body">
+      <div class="row">
+        <div class="col-md-auto">
+          <h5>Informationen:</h5>
+          <h6>Name: {{coachee?.vorname}} {{coachee?.name}}</h6>
+          <h6>E-Mail: {{coachee?.email}}</h6>
+          <h6>Firma: {{coachee?.firmenname}}</h6>
+          <h6>Betriebsanschrift: {{coachee?.firmen_str}} {{coachee?.firmen_nr}}, {{coachee?.firmen_plz}}
+            {{coachee?.firmen_ort}}</h6>
+          <h6>Arbeitgeberanschrift: {{coachee?.arbeitgeber_str}}, {{coachee?.arbeitgeber_nr}}
+            {{coachee?.arbeitgeber_plz}} {{coachee?.arbeitgeber_ort}}</h6>
+          <h6>Telefonnummer: {{coachee?.telefonnummer}}</h6>
+          <h6>Mobil: {{coachee?.mobil}}</h6>
+          <h6>E-Mail privat: {{coachee?.privat_email}}</h6>
+          <h6>Privatanschrift: {{coachee?.privat_str}} {{coachee?.privat_nr}}, {{coachee?.privat_plz}}
+            {{coachee?.privat_ort}}</h6>
+        </div>
+        <div class="col-6">
+          <h5>Formulare:</h5>
+            <div *ngIf="isEmptyObject(formulare); else formularList">
+              <div class="card-header"> Es gibt keine ausgefüllten Formulare</div>
+            </div>
+            <ng-template #formularList>
+              <div *ngFor="let formular of formulare">
+            <ul class="list-group list-group-flush">
+              <div class="card-header" *ngIf="formular.inhalt !== null">
+                <a *ngIf="formular.title === 'Protokoll Analyse Arbeitsfähigkeit'"
+                      routerLink="/analyseprotokoll/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Datenschutzerklärung'"
+                   routerLink="/datenschutzerklarung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Anlage zur Verpflichtung auf die Vertraulichkeit'"
+                   routerLink="/vertraulichkeitsverpflichtung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Einwilligungserklärung zur Erhebung von Daten'"
+                   routerLink="/einwilligung-datenerhebung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Einwilligungserklärung zur Übermittlung an Dritte'"
+                   routerLink="/einwilligung-datenuebermittlung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Schweigepflichtentbindung'"
+                   routerLink="/schweigepflichtentbindung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Arbeitsfähigkeitscoaching® im Rahmen des Betrieblichen Eingliederungsmanagements'"
+                  routerLink="/vereinbarung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Merkzettel für Vereinbarungen'"
+                   routerLink="/vereinbarungsmerkzettel/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Datenschutzerklärung Fortsetzung'"
+                   routerLink="/datenschutz2/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Merkzettel für Vereinbarungen 2'"
+                   routerLink="/vereinbarungsmerkzettel2/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Hinweiszettel zur betrieblichen Prävention'"
+                   routerLink="/hinweiszettel/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Abschlussgespräch Protokoll'"
+                   routerLink="/abschlussgespraechprotokoll/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Ergänzung zur Dokumentation des Workshops'"
+                   routerLink="/dokumentationworkshop/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === '2. Dokumentation BEM / Arbeitsfähigkeitscoaching®'"
+                   routerLink="/massnahmenworkshop/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === '1. Dokumentation BEM / Arbeitsfähigkeitscoaching®'"
+                   routerLink="/massnahmenentwicklung/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Kurzfragebogen Ressourcen'"
+                   routerLink="/kurzfragebogen-ressourcen/{{formular._id}}"> {{formular.title}} </a>
+                <a *ngIf="formular.title === 'Kurzfragebogen Belastungen'"
+                   routerLink="/kurzfragebogen-belastungen/{{formular._id}}"> {{formular.title}} </a>
+                <a
+                  *ngIf="formular.title === 'Analyseprotokoll Stockwerke (Protokoll Analyse der Arbeitsfähigkeit - Fortsetzung)'"
+                  routerLink="/analyseprotokoll-stockwerke/{{formular._id}}"> {{formular.title}} </a>
+                <button id="trash" type="button" (click)="deleteFormular(formular._id)" class="btn btn-default btn-sm" *ngIf="isLoggedIn()">
+                  <i-bs name="trash"></i-bs>
+                </button>
+              </div>
+            </ul>
+              </div>
+        </ng-template>
+        </div>
+        <div class="col" id="buttons">
+            <button type="button" class="btn btn-secondary" [routerLink]="['/termine', coachee._id ]"> Termine
+              anschauen
+            </button>
+            <br><br>
+            <button type="button" class="btn btn-secondary" [routerLink]="['/formulare']"
+                    *ngIf="isLoggedIn()"> Formular hinzufügen
+            </button>
+
+            <button [routerLink]="['/update-coacheedaten']" type="button" *ngIf="isLoggedInCoachee()"
+                    class="btn btn-secondary">
+              Meine Daten aktualisieren
+            </button>
+            <br>
+            <br>
+            <button id="cancelButton" type="cancel" class="btn btn-secondary btn-block"
+                    (click)="cancel()">Zurück
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </body>
+

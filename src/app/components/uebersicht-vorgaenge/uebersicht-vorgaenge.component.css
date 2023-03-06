@@ -1,0 +1,30 @@
+body{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+#button {
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+  margin-right:15%;
+  margin-top: 5%;
+}
+.daten {
+  padding: 1%;
+  grid-column: 3/12;
+  grid-row: 1/6;
+}
+
+button {
+  margin-top: 2%;
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;}
+
+button:hover {
+  background-color: white;
+  border-color: chocolate;
+  color: chocolate;}
+

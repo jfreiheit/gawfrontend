@@ -1,0 +1,46 @@
+
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+
+<body *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdffall">
+
+<h1>Im AFCoaching&reg; werden Sie begleitet von </h1>
+<div class="row container d-flex justify-content-center">
+  <div class="card-body">
+    <div id="fallarbeitinfo">
+
+        <div class="row kontakt">
+
+          <div class="image">
+            <img class="photocontainer h-auto"
+                 [src]="imagePreview"
+                 *ngIf="imagePreview">
+          </div>
+          <div class="daten">
+            <div class="row">
+              <h3>{{user?.vorname}} {{user?.name}}</h3>
+              <h5>{{user?.kontaktadresse}} </h5>
+              <h5>{{user?.telefonnummer}}</h5>
+              <h5>{{user?.email}}</h5>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>
+<app-termine></app-termine>
+  </div>
+
+  <div>
+    <form>
+  <button id="btnpdffall" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </form>
+    </div>
+
+</body>
+
+
+
+</div>

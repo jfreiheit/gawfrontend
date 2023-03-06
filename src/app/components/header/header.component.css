@@ -1,0 +1,57 @@
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 30px;
+  font-size: 1rem;
+  color: chocolate;
+}
+.bg{
+  background-color: rgba(158, 162, 162, 0.1);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(158, 162, 162, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(158, 162, 162, .25);
+}
+
+body{
+  font-family: Verdana;
+}
+
+.flexExpand {
+  flex: 1 1 auto;
+
+}
+
+img {
+  height: auto;
+  width: 50%;
+}
+
+.logo {
+  width: 40%;
+
+}
+
+.navbar-collapse {
+  padding-right: 30px;
+}
+
+#log {
+
+  padding-left: 93%;
+}
+
+

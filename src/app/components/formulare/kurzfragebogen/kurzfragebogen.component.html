@@ -1,0 +1,33 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <h1>Messinstrument: Belastung und Ressourcen in Anlehnung an KFZA-Fragebogen</h1>
+  <h4>Kurzfragebogen zur IST- und SOLL-Analyse der Arbeitsfähigkeit</h4>
+<div class="card" id="kfzacard1" style="width: 80%">
+
+  <div class="card-body">
+    <p>Bitte beachten Sie:</p>
+    <ul>
+      <li>Im Folgenden geht es um die Beurteilung Ihrer Arbeitsfähigkeit, so wie sie ist und so wie Sie sie gerne hätten. Mit anderen Worten: Wir wollen eine IST-SOLL-Analyse durchführen.</li>
+      <li>Das Ziel der IST-Beurteilung ist es, Schwachstellen aufzudecken und konkrete Verbesserungsvor-schläge für Ihren Arbeitsplatz zu entwickeln.</li>
+      <li>Für die SOLL-Beurteilung stellen Sie sich bitte vor, wir würden eine Analyse der Arbeitstätigkeit durchführen und die Bedingungen in Ihrem Unternehmen wären für Sie genauso, wie Sie sie gerne hätten. Wie würden Sie dann Ihre Arbeitstätigkeit bewerten?</li>
+      <li>Aus der Analyse der IST-SOLL-Diskrepanzen haben wir die Möglichkeit, besonders gezielt den Handlungsbedarf abzuleiten.</li>
+      <li>Um dies zu bewerkstelligen, ist Ihr persönliches Urteil von entscheidender Bedeutung! Dabei geht es nicht um eine Beurteilung Ihrer Person, sondern um Ihre Bewertung der Arbeitstätigkeit.</li>
+      <li>Ihre Angaben in diesem Fragebogen werden vertraulich behandelt, die Datenauswertung erfolgt anonym.</li>
+      <li>Beurteilen Sie bitte nun auf den folgenden Seiten Ihre Arbeitstätigkeit durch Ankreuzen! Bitte lassen Sie dabei keine Frage aus!</li>
+    </ul>
+    <br>
+      <div id="kfzahinweis">
+        Die Beurteilung der Arbeitstätigkeit erfolgt auf Grundlage von:<br>
+        Prümper, J., Hartmannsgruber, K. & Frese, M. (1995). KFZA - Kurzfragebogen zur Arbeitsanalyse, Zeitschrift für Arbeits- und Organisationspsychologie, 39, 125-132<br>
+        in Erweiterung durch:<br>
+        Prümper, J. (2009). KFZA – Kurz-Fragebogen zur Arbeitsanalyse. In W. Sarges & H. Wottawa (Hrsg.),
+        Handbuch wirtschaftspsychologischer Testverfahren – Band 2: Organisationspsychologische Instrumente. Lengerich: Pabst-Verlag (in Druck).<br>
+        Kontakt: Prof. Dr. Jochen Prümper – jochen.pruemper@htw-berlin.de<br>
+        erweitert durch: Institut für Arbeitsfähigkeit GmbH – Giesert, Liebrich, Reuter<br>
+        Kontakt: gutentag@arbeitsfaehig.com
+      </div>
+  </div>
+  <div>
+   <button [routerLink]="['../kurzfragebogen-belastungen']" id="kfzabutton" type="button" class="btn btn-outline-primary">Fragebogen starten</button>
+  </div>
+</div>
+</div>

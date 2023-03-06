@@ -1,0 +1,49 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+
+  <body *ngIf="isLoggedInCoachee() || isLoggedIn()">
+  <h2 *ngIf="isLoggedInCoachee()">Im AFCoaching&reg; werden Sie begleitet von </h2>
+  <br>
+  <br>
+  <br>
+  <div >
+    <div class="card-body">
+      <div id="fallarbeitCoachee">
+        <div class="row kontakt" *ngIf="user; else loader">
+          <div class="imageCoach">
+            <img class="photocontainer h-auto"
+                 [src]="imagePreview"
+                 *ngIf="imagePreview">
+          </div>
+          <div class="daten">
+            <div class="row">
+              <h4>{{user?.vorname}} {{user?.name}}</h4>
+              <h5>Kontaktadresse: {{user?.kontaktadresse_str}} {{user?.kontaktadresse_nr}}, {{user?.kontaktadresse_plz}} {{user?.kontaktadresse_ort}}</h5>
+              <h5>Telefon: {{user?.telefonnummer}}</h5>
+              <h5>E-Mail: {{user?.email}}</h5>
+              <br>
+              <h5>Rechnungsadresse: {{user?.rechnungsadresse_str}} {{user?.rechnungsadresse_nr}}, {{user?.rechnungsadresse_plz}} {{user?.rechnungsadresse_ort}}</h5>
+            </div>
+          </div>
+          <div class="row btn-update">
+            <button *ngIf="isLoggedIn()" id="buttonupdate"
+                    type="button"
+                    class="btn btn-outline lg"
+                    (click)="updateUser()"
+                    [routerLink]="['/update-coachdaten/', user._id]">Daten aktualisieren
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+
+  </body>
+
+</div>

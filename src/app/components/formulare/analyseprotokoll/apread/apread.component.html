@@ -1,0 +1,217 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfanalypread">
+  <h1>{{analyseprotokollTitle}}</h1>
+
+  <div class="card" id="card1" style="width: 80%">
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="card-body">
+          <div id="info">
+            <div class="row">
+              <div class="col">
+                <label for="datum" class="form-label">{{analyseprotokollFragen[10].frage}}</label>
+                <input type="text" class="form-control" formControlName="antwortControl10" id="datum">
+
+                <label for="zeit" class="form-label">{{analyseprotokollFragen[11].frage}}</label>
+                <input type="text" class="form-control" formControlName="antwortControl11" id="zeit">
+              </div>
+              <div class="col">
+                <label for="ort" class="form-label">{{analyseprotokollFragen[12].frage}}</label>
+                <input type="input" class="form-control" formControlName="antwortControl12" id="ort">
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="card2">
+            <div class="card-header">BEM Berechtigte/r</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <label for="coacheeName" class="form-label">Name</label>
+                  <p type="text" id="coacheeName" class="form-control" readonly>{{coacheeName}}</p>
+                </div>
+                <div class="col">
+                  <label for="coacheeVorname" class="form-label">Vorname </label>
+                  <p type="text" id="coacheeVorname" class="form-control" aria-label="Vorname des BEM Berechtigten" readonly>
+                    {{coacheeVorname}} </p>
+                </div>
+                <div class="col">
+                  <label for="alter" class="form-label">{{analyseprotokollFragen[13].frage}}</label>
+                  <input type="input" class="form-control" formControlName="antwortControl13" id="alter">
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row">
+                <div class="col">
+                  <label for="unternehmen" class="form-label">Unternehmen </label>
+                  <input type="text" class="form-control" id="unternehmen" placeholder="{{coacheeUN}}" readonly>
+                </div>
+                <div class="col">
+                  <label for="arbeitsbereich" class="form-label">{{analyseprotokollFragen[14].frage}}</label>
+                  <input type="input" class="form-control" id="arbeitsbereich" formControlName="antwortControl14">
+                </div>
+                <div class="col">
+                  <label for="position" class="form-label">{{analyseprotokollFragen[15].frage}}</label>
+                  <input type="input" class="form-control" id="position" formControlName="antwortControl15">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card" id="card3">
+            <div class="card-header">AF Coach&reg;</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <label for="coachName" class="form-label">Name</label>
+                  <input type="text" id="coachName" class="form-control" aria-label="Name des Coaches" formControlName="antwortControl16">
+                </div>
+                <div class="col">
+                  <label for="coachVorname" class="form-label">Vorname</label>
+                  <input type="text" id="coachVorname" class="form-control" aria-label="Vorname des Coaches" formControlName="antwortControl17">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="inputInhalt"  class="form-label">{{analyseprotokollFragen[0].frage}}</label>
+            <textarea class="form-control" id="inputInhalt"  rows="5" formControlName="antwortControl"></textarea>
+          </div>
+          <h3>2. Derzeitige Arbeitsfähigkeit im Vergleich zu der besten, je erreichten Arbeitsfähigkeit</h3>
+          <div class="mb-3">
+            <label for="inputInhalt1" class="form-label">{{analyseprotokollFragen[1].frage}}</label>
+            <p style="color:chocolate;">Sie haben folgenden Wert ausgewählt: {{formular?.inhalt[1]?.antwort}}</p>
+            <div ngDefaultControl id="inputInhalt1" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+              <input type="radio" value="0" formControlName="antwortControl1" class="btn-check" name="antwortControl1" id="btnradio11" autocomplete="off" >
+              <label class="btn btn-outline-dark" for="btnradio11">0</label>
+
+              <input type="radio" value="1" formControlName="antwortControl1" class="btn-check" name="antwortControl1" id="btnradio12" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio12">1</label>
+
+              <input type="radio" value="2" formControlName="antwortControl1" class="btn-check" name="antwortControl1" id="btnradio13" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio13">2</label>
+
+              <input type="radio" value="3" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio14" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio14">3</label>
+
+              <input type="radio" value="4" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio15" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio15">4</label>
+
+              <input type="radio" value="5" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio16" autocomplete="off" >
+              <label class="btn btn-outline-dark" for="btnradio16">5</label>
+
+              <input type="radio" value="6" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio17" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio17">6</label>
+
+              <input type="radio" value="7" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio18" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio18">7</label>
+
+              <input type="radio" value="8" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio19" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio19">8</label>
+
+              <input type="radio" value="9" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio20" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio20">9</label>
+
+              <input type="radio" value="10" class="btn-check" formControlName="antwortControl1" name="antwortControl1" id="btnradio21" autocomplete="off">
+              <label class="btn btn-outline-dark" for="btnradio21">10</label>
+
+            </div>
+
+
+            <div class="mb3">
+              <p>0 = völlig arbeitsunfähig</p>
+              <p>10 = derzeit die beste Arbeitsfähigkeit</p>
+            </div>
+            <div class="mb-3">
+              <label for="inputInhalt2" class="form-label">{{analyseprotokollFragen[2].frage}}</label>
+              <textarea id="inputInhalt2" class="form-control" rows="3" formControlName="antwortControl2"></textarea>
+            </div>
+
+            <h3>3. Arbeitsfähigkeit in Bezug auf die Arbeitsanforderungen</h3>
+            <label for="inputInhalt3" class="form-label" >{{analyseprotokollFragen[3].frage}}</label>
+            <p style="color:chocolate;">Sie haben folgenden Wert ausgewählt: {{formular?.inhalt[3]?.antwort}}</p>
+            <div ngDefaultControl id="inputInhalt3" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+              <input type="radio" value="sehr schlecht" class="btn-check" formControlName="antwortControl3" name="antwortControl3" id="btnradio1" autocomplete="off" >
+              <label class="btn btn-outline-dark custom" for="btnradio1">sehr schlecht</label>
+
+              <input type="radio" value="eher schlecht" class="btn-check" formControlName="antwortControl3" name="antwortControl3" id="btnradio2" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio2">eher schlecht</label>
+
+              <input type="radio" value="mittelmäßig" class="btn-check" formControlName="antwortControl3" name="antwortControl3" id="btnradio3" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio3">mittelmäßig</label>
+
+              <input type="radio" value="eher gut" class="btn-check" formControlName="antwortControl3" name="antwortControl3" id="btnradio4" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio4">eher gut</label>
+
+              <input type="radio" value="sehr gut" class="btn-check" formControlName="antwortControl3" name="antwortControl3" id="btnradio5" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio5">sehr gut</label>
+            </div>
+
+            <label for="inputInhalt4" class="form-label" >{{analyseprotokollFragen[4].frage}}</label>
+            <p style="color:chocolate;">Sie haben folgenden Wert ausgewählt: {{formular?.inhalt[4]?.antwort}}</p>
+            <div ngDefaultControl id="inputInhalt4" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+              <input type="radio" value="sehr schlecht" class="btn-check"  formControlName="antwortControl4" name="antwortControl4" id="btnradio6" autocomplete="off" >
+              <label class="btn btn-outline-dark custom" for="btnradio6">sehr schlecht</label>
+
+              <input type="radio" value="eher schlecht" class="btn-check" formControlName="antwortControl4" name="antwortControl4" id="btnradio7" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio7">eher schlecht</label>
+
+              <input type="radio" value="mittelmäßig" class="btn-check" formControlName="antwortControl4" name="antwortControl4" id="btnradio8" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio8">mittelmäßig</label>
+
+              <input type="radio" value="eher gut" class="btn-check" formControlName="antwortControl4" name="antwortControl4" id="btnradio9" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio9">eher gut</label>
+
+              <input type="radio" value="sehr gut" class="btn-check" formControlName="antwortControl4" name="antwortControl4" id="btnradio10" autocomplete="off">
+              <label class="btn btn-outline-dark custom" for="btnradio10">sehr gut</label>
+            </div>
+          </div>
+
+
+          <h3>Ergänzende Fragen</h3>
+          <div class="mb-3">
+            <label for="inputInhalt5" class="form-label">{{analyseprotokollFragen[5].frage}}</label>
+            <textarea id="inputInhalt5" class="form-control" rows="1" formControlName="antwortControl5"> </textarea>
+            <div>
+              <div class="mb-3">
+                <label for="inputInhalt6" class="form-label">{{analyseprotokollFragen[6].frage}}</label>
+                <textarea id="inputInhalt6" class="form-control" rows="2" formControlName="antwortControl6"></textarea>
+                <div>
+                  <div class="mb-3">
+                    <label for="inputInhalt7" class="form-label">{{analyseprotokollFragen[7].frage}}</label>
+                    <textarea id="inputInhalt7" class="form-control" rows="3" formControlName="antwortControl7"></textarea>
+                    <div>
+                      <div class="mb-3">
+                        <label for="inputInhalt8" class="form-label">{{analyseprotokollFragen[8].frage}}</label>
+                        <textarea id="inputInhalt8" class="form-control" rows="2" formControlName="antwortControl8"></textarea>
+                        <div>
+                          <div class="mb-3">
+                            <label for="inputInhalt9" class="form-label">{{analyseprotokollFragen[9].frage}}</label>
+                            <textarea id="inputInhalt9" class="form-control" rows="2" formControlName="antwortControl9"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <form>
+    <div class="form-group">
+      <button id="btnsavealyp" class= 'btn btn-outline lg' value ="Aktualisieren" (click)="onSubmit()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnsavealyp1" type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen</button>
+      <button id="btnpdfanalyp" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </div>
+  </form>
+</div>
+

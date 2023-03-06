@@ -1,0 +1,101 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfde">
+<h1>{{einwilligungDatenerhebungTitle}}</h1>
+<h4>gem. Art. 9 Abs. 2 lit. h DS-GVO</h4>
+<div class="card" id="decard1">
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row" id=dedaten>
+            <label for="inputInhalt" class="form-label">{{einwilligungDatenerhebungFragen[0].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt" formControlName="antwortControl" placeholder="{{coacheeName}}" value="{{coacheeName}}">
+            <label for="inputInhalt1" class="form-label">{{einwilligungDatenerhebungFragen[1].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt1" formControlName="antwortControl1" placeholder="{{coacheeVorname}}" value="{{coacheeVorname}}">
+            <label for="inputInhalt2" class="form-label">{{einwilligungDatenerhebungFragen[2].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt2" formControlName="antwortControl2" placeholder="">
+            <label for="inputInhalt3" class="form-label">{{einwilligungDatenerhebungFragen[3].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt3" formControlName="antwortControl3" placeholder="">
+            <label for="inputInhalt4" class="form-label">{{einwilligungDatenerhebungFragen[4].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt4" formControlName="antwortControl4" placeholder="">
+            <label for="inputInhalt5" class="form-label">{{einwilligungDatenerhebungFragen[5].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt5" formControlName="antwortControl5" placeholder="">
+        </div>
+        <div class="row" id=deerklärung>
+            <p>Das Unternehmen/ die Dienststelle/ Standort XY<br>
+            vertreten durch</p>
+        <div class="row" id=defeld1>
+            <label for="inputInhalt6" class="form-label">{{einwilligungDatenerhebungFragen[6].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt6" formControlName="antwortControl6" placeholder="">
+        </div>
+
+            <p>und</p>
+        <div class="row" id=defeld2>
+            <label for="inputInhalt7" class="form-label">{{einwilligungDatenerhebungFragen[7].frage}}</label>
+            <input type="text" class="form-control" id="inputInhalt7" formControlName="antwortControl7" placeholder="{{coacheeName}}, {{coacheeVorname}}">
+        </div>
+          <p>
+            <br>
+            schließen folgende Vereinbarung über die Mitwirkung am Betrieblichen Eingliederungsmanagement (BEM):
+            <br><br>
+            Der Mitarbeiter/die Mitarbeiterin willigt ein, dass den benannten Mitgliedern des Integrationsteams die im Rahmen des Betrieblichen Eingliederungsmanagements zum Zwecke ihrer/seiner Eingliederung erforderlichen Daten bekannt gemacht werden.
+            Die Erhebung und Verarbeitung der Angaben erfolgen dabei sparsam und ausschließlich zweckgebunden. Ärztliche Angaben zu Krankheitsdiagnosen werden nicht erfasst und auch nicht zur Personalakte genommen. Es wird eine gesonderte BEM-Akte angelegt. Nach Artikel 17 Abs. 1 DS-GVO sind personenbezogene Daten unverzüglich zu löschen,
+            wenn die personenbezogenen Daten für die Zwecke, für die sie erhoben oder auf sonstige Weise verarbeitet wurden, nicht mehr notwendig sind. Alternativ wird die Akte dem BEM-Berechtigten ausgehändigt.
+            <br><br>
+            Der/die BEM-Berechtigte ist darüber informiert, dass die Mitglieder des Integrationsteams zur Wahrung der Vertraulichkeit verpflichtet sind.
+            <br><br>
+            Im weiteren Verlauf des betrieblichen Eingliederungsmanagements können zum Zweck des BEM u. U. auch Gesundheitsdaten erhoben und unter den genannten datenschutzrechtlichen Rahmenbedingungen verarbeitet und genutzt werden.
+            Hierüber wird der Mitarbeiter/die Mitarbeiterin vorab informiert und die Einwilligung eingeholt.
+            <br><br>
+            Die erhobenen Daten in Papierform oder elektronischer Form werden zum Schutz vor unbefugtem Zugriff unter Verschluss aufbewahrt. Der Zugriff auf die BEM-Akte erfolgt nach Maßgabe des Datenschutzkonzeptes.
+            <br><br>
+            Eine Weitergabe von Daten, die im BEM erhoben worden sind, an Dritte (wie z. B Einrichtungen der Rehabilitation) erfolgt nur nach vorheriger Zustimmung des Mitarbeiters/der Mitarbeiterin.
+            <br><br>
+          Der Mitarbeiter/die Mitarbeiterin ist belehrt worden über die Freiwilligkeit der gemachten Angaben, die
+          Datenspeicherung, -veränderung und -nutzung. Er/sie ist darauf hingewiesen worden, dass er/sie Einsicht in
+          alle seine/ihre Personen betreffenden Urkunden und Dokumente nehmen kann sowie einen Anspruch auf Kopien aller
+          Akten hat.
+          <br><br>
+          Diese Einwilligung kann jederzeit widerrufen werden. Durch seine/ihre Unterschrift bestätigt der
+          Mitarbeiter/die Mitarbeiterin gleichzeitig den Empfang einer Ausfertigung der Vereinbarung.
+          </p>
+
+          <div class="row">
+            <div class="col">
+              <label for="inputInhalt8" class="form-label">{{einwilligungDatenerhebungFragen[8].frage}}</label>
+              <input type="input" class="form-control" id="inputInhalt8" formControlName="antwortControl8" placeholder="">
+            </div>
+            <div class="col">
+              <label for="inputInhalt9" class="form-label">{{einwilligungDatenerhebungFragen[9].frage}}</label>
+              <input type="date" class="form-control" id="inputInhalt9" formControlName="date" placeholder="">
+            </div>
+          </div>
+
+          <div class="row" id="dueunterschrift">
+            <app-signaturepad></app-signaturepad>
+            <p style="font-weight: bold">____________________________________________</p>
+            <span>Unterschrift Mitarbeiter/in</span>
+            <br>
+            <small style="color: darkred">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+
+          </div>
+
+
+          <div class="row" id="dueunterschrift2">
+            <app-signaturepad></app-signaturepad>
+            <p style="font-weight: bold">____________________________________________</p>
+            <span>Unterschrift Betrieb</span>
+          </div>
+          <small style="color: darkred">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+
+        </div>
+      </form>
+    </div>
+</div>
+  </div>
+  <form>
+      <button id="btnsavede" class= 'btn btn-outline lg' (click)="onSubmit()"
+              >">Speichern</button>
+      <button id="btnpdfde" class='btn btn-outline lg' value="pdf" (click)="generatePDF()">PDF erstellen</button>
+      <button id="btnsavede1" class= 'btn btn-outline lg' (click)="onSubmit()"
+              [routerLink]="['/einwilligung-datenuebermittlung']">Weiter</button>
+  </form>
+</div>

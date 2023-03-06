@@ -1,0 +1,156 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+  <body *ngIf="isLoggedIn()">
+  <br>
+  <br>
+  <h4 style="text-align: center">Hallo {{getAdminName()}}! Bitte fülle alle mit *-kennzeicheten Felder aus</h4>
+
+  <br>
+  <div class="card-body">
+    <div class="row container d-flex justify-content-center">
+      <div>
+        <h4 class="card-header" style="color: chocolate"> Kontaktformular </h4>
+        <br>
+        <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+
+          <div class="col form-group">
+
+            <div>
+              <div class="imageCoach">
+                <img class="photocontainer h-auto"
+                     [src]="imagePreview">
+              </div>
+              <br>
+              <input
+                type="file"
+                class="dn"
+                (change)="onFile($event)"
+                #input
+              >
+              <button
+                (click)="triggerClick()"
+                type="button" class="waves-effect waves-light btn">
+
+                Bild hochladen
+              </button>
+            </div>
+
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Name des Coaches*</label>
+            <div class="col">
+              <input type="text"
+                     class="form-control"
+                     aria-required="true"
+                     placeholder="Vorname"
+                     formControlName="vornameControl" id="inputVorname">
+
+            </div>
+            <div class="col">
+              <input type="text" class="form-control"
+                     placeholder="Name"
+                     formControlName="nameControl" id="inputName">
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Kontaktadresse*</label>
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Straße"
+                     formControlName="kontaktadresse_strControl"
+                     id="inputKontaktadresse_str">
+
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="Nr."
+                     formControlName="kontaktadresse_nrControl" id="inputKontaktadresse_nr" >
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="PLZ"
+                     formControlName="kontaktadresse_plzControl" id="inputKontaktadresse_plz" >
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Ort"
+                     formControlName="kontaktadresse_ortControl" id="inputKontaktadresse_ort" >
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Telefonnummer*</label>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Telefon"
+                     formControlName="telefonnummerControl"
+                     id="inputTelefonnummer" >
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Zugangsdaten*</label>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Email"
+                     formControlName="emailControl" id="inputEmail" >
+            </div>
+            <div class="col">
+              <input type="text" aria-required="true" class="form-control" placeholder="Password"
+                     formControlName="passwordControl" id="inputPassword" >
+
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Sicherheitcode*</label>
+            <div class="col">
+              <input type="text" aria-required="true" class="form-control" placeholder="Secret Code"
+                     formControlName="secretControl" id="inputSecret" >
+
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Rechte des Coaches*</label>
+            <div class="col">
+              <div class="form-group">
+                <select class="custom-select form-control" placeholder="Role"
+                        formControlName="roleControl" id="Rolle">
+                  <option value="admin">Admin</option>
+                  <option value="coach">Coach</option>
+                </select>
+              </div>
+              <!-- <input type="text" class="form-control" placeholder="Role"
+                      formControlName="roleControl" id="inputR">-->
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <label>Rechnungsadresse (optional)</label>
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Straße"
+                     formControlName="rechnungsadresse_strControl">
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="Nr."
+                     formControlName="rechnungsadresse_nrControl">
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="PLZ"
+                     formControlName="rechnungsadresse_plzControl">
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Ort"
+                     formControlName="rechnungsadresse_ortControl">
+            </div>
+
+          </div>
+          <br>
+          <div class="row justify-content-end">
+            <button id="button" type="submit" class="btn btn-outline-primary">Speichern
+            </button>
+            <button type="cancel" class='btn btn-outline lg' (click)="cancel()">Abbrechen
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</div>

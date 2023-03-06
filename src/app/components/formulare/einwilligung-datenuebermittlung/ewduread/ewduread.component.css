@@ -1,0 +1,137 @@
+h1 {
+  margin-top: 3%;
+  text-align: center;
+}
+
+h4 {
+  margin-top: 0.5%;
+  text-align: center;
+}
+
+#duecard1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  width: 80%;
+}
+
+label {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+input {
+  width: 90%;
+  margin-left: 5%;
+}
+
+#dueerklärung, #dueabschluss {
+  margin: 5%
+}
+
+p {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120%;
+}
+
+#duefeld {
+  background-color: lightgray;
+  padding: 1%;
+  padding-bottom: 3%;
+}
+
+#dueankreuz {
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+.form-inline {
+  display: flex;
+  margin-top: 2%;
+}
+
+.form-inline
+label {
+  margin: 1%;
+  width: auto;
+  margin-right: 2%;
+}
+
+.form-inline
+input {
+  margin: 1%;
+  width: auto;
+  margin-right: 2%;
+}
+
+#dueinfog1_1, #dueinfog2_1,
+#dueinfog3_1, #dueinfog4_1,
+#dueinfog5_1, #dueinfog6_1
+{
+  width: 15px;
+  border-width: 3px;
+}
+
+#dueinfog1_2, #dueinfog2_2,
+#dueinfog3_2, #dueinfog4_2,
+#dueinfog4_3 {
+  margin-top: 0%;
+}
+
+#dueinfog6_2 {
+  margin-top: 0.5%;
+  margin-bottom: 2%;
+  width: 70%;
+}
+
+#dueunterschrift {
+  margin-top: 15%;
+  margin-bottom: 2%;
+
+}
+
+#btnsavedue {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavedue:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnsavedue1 {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavedue1:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnpdfdue {
+  margin-bottom: 2%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfdue:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}

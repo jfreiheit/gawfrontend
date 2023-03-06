@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md navbar-light bg">
+  <div class="logo"><a class="navbar-brand" [routerLink]="['/home']"><img src="../../assets/LogoTransparent.png"
+                                                                          alt="img"></a></div>
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+
+    <span class="flexExpand" *ngIf="isLoggedIn()">
+      <span id="log2">
+      <a class="p-2 text-dark float-md-end" [routerLink]="['/meine-vorgaenge']"><h5>Meine Vorgänge</h5></a>
+      <a class="p-2 text-dark float-md-end" [routerLink]="['/fall-anlegen']"><h5>Fall anlegen</h5></a>
+      <a class="p-2 text-dark float-md-end" [routerLink]="['/stammdaten']"><h5>Stammdaten</h5></a>
+      <a class="p-2 text-dark float-md-end" *ngIf="getRolle() == 'admin'" [routerLink]="['/uebersicht-users']"><h5>AFCoaches®</h5></a>
+      </span>
+    </span>
+    <span class="" *ngIf="isLoggedIn()">
+      <button class="btn btn-outline" (click)="logout()"><i-bs name="box-arrow-right" style="color: darkred"
+                                                               width="1.5em" height="1.5em"
+                                                               title="Logout"></i-bs> </button>
+    </span>
+
+    <span class="flexExpand" *ngIf="isLoggedInCoachee()">
+      <span id="log3">
+        <a class="p-2 text-dark float-md-end" [routerLink]="['/stammdaten']"><h5>Mein Coach</h5></a>
+        <a class="p-2 text-dark float-md-end" [routerLink]="['/meine-vorgaenge/' + getCoacheeID()]"><h5>Meine Daten</h5></a>
+      </span>
+    </span>
+    <span class="" *ngIf="isLoggedInCoachee()">
+      <button class="btn btn-outline" (click)="logout()"><i-bs name="box-arrow-right" style="color: darkred" width="1.5em" height="1.5em" title="Logout"></i-bs> </button>
+    </span>
+  </div>
+</nav>
+

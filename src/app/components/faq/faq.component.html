@@ -1,0 +1,268 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+<div *ngIf="isNotLoggedIn()">
+  <div class="card" id="notloggedin">
+    <div class="card-body">
+      <h2> Bitte loggen Sie sich ein, um die FAQ's einsehen zu können.</h2>
+      <br>
+      <button id="coachbutton" class="btn btn-outline-info" [routerLink]="['/login']" style="margin-right: 2%">Zum Login als Coach</button>
+      <button id="coacheebutton" class="btn btn-outline-info" [routerLink]="['/login-coachee']">Zum Login als Coachee</button>
+    </div>
+
+  </div>
+</div>
+
+  <div *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div style="text-align: center">
+  <br>
+  <p>Arbeits- und Beschäftigungsfähigkeit wiederherstellen, erhalten und fördern</p>
+  <h3 style="color: darkred">Arbeitsfähig in die Zukunft</h3>
+  <br>
+  <img src="../../assets/Screenshot_Haus.png" class="img-fluid" alt="Bild Haus der Arbeitsfähigkeit">
+</div>
+<br>
+<br>
+<div style="text-align: center">
+<h3 style="font-weight: normal">Unterlagen zum Arbeitsfähigkeitscoaching® für die/den</h3>
+<h1>BEM-Berechtigte/n</h1>
+<br>
+  <div class="container" >
+  <p>
+    Das Arbeitsfähigkeitscoaching® wurde als Rahmenkonzept im Projekt Neue Wege im BEM (<a href="http://www.re-bem.de">http://www.re-bem.de</a>) entwickelt und gefördert durch das BMAS und den Ausgleichsfonds nach § 78 Sozialgesetzbuch IX in Verbindung mit § 41 Schwerbehindertenausgleichsabgabeverordnung.
+    In dieser Form ist es eine Weiterentwicklung der Institut für Arbeitsfähigkeit GmbH – Giesert, Liebrich, Reuter.
+  </p>
+</div>
+  <br>
+  <br>
+  <br>
+  <h2 style="color: darkred">Unterlagen zum Ablauf des AFCoachings®</h2>
+  <br>
+  <h3>Arbeitsfähigkeitscoaching® (AFCoaching®)</h3>
+  <h4 style="font-weight: normal">Ablauf</h4>
+  <br>
+  <br>
+  <img src="../../assets/AblaufScreenshot.png" class="img-fluid" alt="Bild Ablauf" id="bild2">
+
+  <br>
+  <br>
+  <h3>Beschreibung der Schritte des AFCoachings®</h3>
+</div>
+<div class="card" id="card1">
+  <br>
+<h5> 1. Erstgespräch AFCoaching® mit BEM-Berechtigter/m</h5>
+  <ul style="list-style-type: disc">
+    <li>Der AFCoach® und BEM-Berechtigte/r stellen sich vor</li>
+    <li>Übergabe des Arbeitsfähigkeitsbuches, um alle Dokumente zu sammeln</li>
+    <li>Information über den Ablauf des AFCoachings® sowie das Haus der Arbeitsfähigkeit</li>
+    <li>Information über Datenschutz</li>
+    <li>Information über die Verantwortlichkeiten der/s BEM-Berechtigten und des AFCoachs® beim Prozess</li>
+    <li>Diskussion der weiteren Schritte</li>
+    <li>grobe Zeitplanung und konkreter nächster Termin</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li>Arbeitsfähigkeitsbuch</li>
+    <li>Steckbrief des AFCoach® mit Bild und Terminplanung zum gemeinsamen Ausfüllen</li>
+    <li>Skizze Ablauf des Coachings sowie Erläuterungen dazu</li>
+    <li>Datenschutzerklärung zum Unterschreiben</li>
+    <li>"Coachingvertrag" zum Unterschreiben</li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Der Coachingvertrag, die Datenschutzvereinbarung und die Einwilligungserklärung müssen unterschrieben der/dem BEM-Berechtigten übergeben werden.
+  </p>
+  <br>
+  <br>
+  <h5> 2. Analyse mit BEM-Berechtigter/m und ggf. mit weiteren Expertinnen und Experten</h5>
+  <ul style="list-style-type: disc">
+    <li> Stellenbeschreibung besorgen, prüfen und in die Analyse integrieren</li>
+    <li>Gefährdungsbeurteilung körperliche und psychische Belastungen sowie weitere bestehende Analysen
+      des Arbeitsplatzes werden besorgt und gemeinsam analysiert.</li>
+    <li>ggf. muss eine Gefährdungsbeurteilung körperliche und psychische Belastungen veranlasst werden
+      sowie eigene Analysen (bspw. Begehung des Arbeitsplatzes) durchgeführt werden.</li>
+    <li>Arbeitsfähigkeitsgespräch mit allen Faktoren des Hauses der Arbeitsfähigkeit (Gesundheit, Kompetenz, Werte, Arbeitsbedingungen und Führung sowie Umfeld) zur Identifikation von Einschränkungen und Ressourcen sowie von Verbesserungen (Grundsätzliche Fragestellungen: Was kann die/der BEM-Berechtigte bei dem jeweiligen Stockwerk für sich selbst tun? Wie kann das Unternehmen bei dem jeweiligen Stockwerk unterstützen, um die Arbeitsfähigkeit wiederherzustellen, zu erhalten und zu fördern?) Aufsteller Haus der Arbeitsfähigkeit nutzen</li>
+    <li>Kurzfragebogen zur Arbeitsanalyse (KFZA) beim 4. Stockwerk „Arbeit“ hinzuziehen</li>
+    <li>Dokumentation der Analysen sowie Verbesserungsideen</li>
+    <li>Terminplanung für Schritt 3</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li>bestehende Gefährdungsbeurteilungen sowie Analysen des Arbeitsplatzes</li>
+    <li>Protokoll für das Arbeitsfähigkeitsgespräch</li>
+    <li>Abbildung Haus der Arbeitsfähigkeit</li>
+    <li>Dokumente zur Dokumentation der Diskussion der einzelnen Facetten</li>
+    <li>vorhandener Terminplan</li>
+    <li>Kurzfragebogen zur Arbeitsanalyse (KFZA): <a href="/kurzfragebogen" >Kurzfragebogen BEMdigital</a></li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Die Dokumentation soll der/dem Berechtigten im Original ausgehändigt werden. (Kopie für den AFCoach® zur weiteren Bearbeitung anfertigen.)
+  </p>
+  <br>
+  <br>
+  <h5> 3. Diskussion der Analyseergebnisse und Entwicklung von Maßnahmen mit BEM-Berechtigter/m</h5>
+  <ul style="list-style-type: disc">
+    <li>  Zusammenfassung aller Analyseergebnisse, Vollständigkeitsprüfung, ggf. Ergänzungen und anschließende Priorisierung der einzelnen Bereiche</li>
+    <li>Spezifikation von Maßnahmen zur Umsetzung der Analyseergebnisse</li>
+    <li>schriftliche Festlegung eines Maßnahmenplans mit Meilensteinen, notwendigen Entscheidern und Zeitangaben zur Vorbereitung von Schritt 4</li>
+    <li>Einwilligung einholen, um notwendige Entscheider für den Maßnahmenworkshop einzuladen (siehe Schritt 4)</li>
+    <li>Dokumentation</li>
+    <li>Datenschutz überprüfen</li>
+    <li>Ergebnisse werden der/dem Betroffenen an die Hand gegeben</li>
+    <li>Terminplanung für Schritt 4 (hier muss auch vereinbart werden, wer die notwendigen Beteiligten für Schritt 4 einlädt)</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li>Protokolle des Arbeitsfähigkeitsgesprächs sowie aller weiteren Analysen</li>
+    <li>Protokollvorlage zur Dokumentation der Maßnahmen</li>
+    <li>vorhandener Terminplan</li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Die Dokumentation soll der/dem Berechtigten im Original ausgehändigt werden. (Kopie für den AFCoach® zur weiteren Bearbeitung anfertigen.)
+  </p>
+  <br>
+  <br>
+  <h5> 4. Maßnahmenworkshop mit allen erforderlichen Beteiligten</h5>
+  <ul style="list-style-type: disc">
+    <li> alle für die Maßnahmenumsetzung relevanten Akteure (ggf. auch externe), insb. Führungskräfte, (inkl. BEM-Berechtigter/m) treffen sich</li>
+    <li>alle Beteiligten geben ihre Einwilligung zum Datenschutz ab</li>
+    <li>Diskussion und Planung der Maßnahmenumsetzung</li>
+    <li>Machbarkeitsprüfung</li>
+    <li>schriftliche Festlegung eines gemeinsamen Maßnahmenplans mit Verantwortlichen, Meilensteinen
+      und Zeitangaben (inkl. Monitoringgespräche)</li>
+    <li>Aushändigung des Ergebnisses an BEM-Berechtigte/n und Akteure</li>
+    <li>Terminplanung für Schritt 5 (Monitoringgespräche)</li>
+    <li>bitte die externen Akteurinnen und Akteure beachten (siehe Abbildung unten)</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li>Datenschutzerklärung für alle Beteiligten</li>
+    <li>Protokolle der Maßnahmenentwicklung aus Schritt 3</li>
+    <li>Protokollvorlage zur Dokumentation der Maßnahmen</li>
+    <li>vorhandener Terminplan</li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Die Dokumentation soll der/dem Berechtigten im Original ausgehändigt werden. (Kopie für den AFCoach® zur weiteren Bearbeitung anfertigen.)
+  </p>
+  <br>
+  <br>
+  <h5> 5. Maßnahmenumsetzung und Monitoringgespräche</h5>
+  <ul style="list-style-type: disc">
+    <li>BEM-Berechtigte/r und alle weiteren Verantwortlichen arbeiten an der Umsetzung der vereinbarten Maßnahmen</li>
+    <li>weitere Gespräche mit Arbeitsfähigkeitscoach zur Begleitung der Maßnahmen</li>
+    <li>bei Bedarf Anpassung von Maßnahmen ("Feinjustierung")</li>
+    <li>gemeinsame Überprüfung der Meilensteine</li>
+    <li>bei Zielerfüllung/Umsetzung der beschlossenen Maßnahmen: Terminplanung für Schritt 6</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li>Protokolle der Maßnahmenentwicklung aus Schritt 3 und 4</li>
+    <li>vorhandener Terminplan</li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Die Dokumentation soll der/dem Berechtigten im Original ausgehändigt werden. (Kopie für den AFCoach® zur weiteren Bearbeitung anfertigen.)
+  </p>
+  <br>
+  <br>
+  <h5>6. AFCoaching®-Abschlussgespräch und Evaluation</h5>
+  <ul style="list-style-type: disc">
+    <li>Durchführung des AFCoaching®-Abschlussgesprächs</li>
+    <li>Evaluation des Coaching-Prozesses</li>
+    <li>evtl. Feststellung von weiterem Unterstützungsbedarf</li>
+    <li>Termin für Nachhaltigkeitsgespräch festlegen nach ca. 3 Monaten (oder je nach Maßnahme nach einem längeren Zeitraum)</li>
+    <li>BEM-Akte plus Evaluationsbogen gehen an BEM-Verantwortliche (mündliche Einwilligung für Weitergabe der BEM-Akte einholen!)</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li> Protokoll AFCoaching®-Abschlussgespräch</li>
+    <li>Evaluationsbogen</li>
+    <li>vorhandener Terminplan</li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Die Dokumentation soll der/dem Berechtigten im Original ausgehändigt werden. (Kopie für den AFCoach® zur weiteren Bearbeitung anfertigen.)
+  </p>
+  <br>
+  <br>
+  <h5>7. Nachhaltigkeitsgespräch</h5>
+  <ul style="list-style-type: disc">
+    <li>Überprüfung der Arbeitsfähigkeit und der Zielerfüllung der umgesetzten Maßnahmen</li>
+    <li>ggf. nachjustieren</li>
+    <li>Abschluss des AFCoachings® und Meldung an BEM-Verantwortliche</li>
+  </ul>
+  <br>
+  <h5> Benötigte Dokumente für diesen Schritt</h5>
+  <ul style="list-style-type: disc">
+    <li> Protokoll AFCoaching®-Abschlussgespräch (aus Schritt 6)</li>
+  </ul>
+
+  <br>
+  <h5>
+    Wichtig:
+  </h5>
+  <p style="font-weight: bold">
+    Die Dokumentation soll der/dem Berechtigten im Original ausgehändigt werden. (Kopie für den AFCoach® zur weiteren Bearbeitung anfertigen.)
+  </p>
+  <br>
+</div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center">
+  <h3 style="color: darkred">Arbeitsfähigkeitscoaching®</h3>
+  <h6>Stärke durch Vernetzung</h6>
+    <br>
+    <br>
+    <img src="../../assets/FaqBildScreenshot.png" class="img-fluid" alt="Bild Ablauf" id="bild3">
+<br>
+    <br>
+    <br>
+    <p> Bitte beachten Sie auch die Leistungsgruppen und Träger auf der folgenden Seite.</p>
+  <br>
+    <br>
+    <h4>Leistungsgruppen und Träger (Stand 2018)</h4>
+    <br>
+    <img src="../../assets/GruppenBildFaq.png" class="img-fluid" alt="Bild Ablauf" id="bild4">
+<br>
+    <br>
+
+  </div>
+  </div>
+
+</div>
+

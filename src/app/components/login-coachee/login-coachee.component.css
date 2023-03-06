@@ -1,0 +1,51 @@
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 5%; /* Added */
+}
+.container {
+  margin-top: 5%;
+  width: 50%;
+}
+input {
+  width: 90%;
+  margin-left: 5%;
+}
+
+label {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+#signin {
+  margin-bottom: 5%;
+  margin-left: 50%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+
+
+}
+
+#resetpw {
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+#signin:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+#resetpw:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+h1{
+  text-align: center;
+}
+.card-header{
+  border-color: black;
+  background-color: white;
+}
+

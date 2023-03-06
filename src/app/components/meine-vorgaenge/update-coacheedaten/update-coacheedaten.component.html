@@ -1,0 +1,124 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+    <body *ngIf="isLoggedInCoachee()">
+      <div class="card-body">
+        <div id="StammdatenCoachee">
+          <div class="row" > <!-- Bootstrap - Preloader -->
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <br>
+
+              <div class="form-group row">
+                <label>Name des Coachees</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Vorname" formControlName="vornameControl" disabled>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Name" formControlName="nameControl" disabled>
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Firmenname</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Firmenname" formControlName="firmennameControl" disabled>
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Betriebsanschrift</label>
+                <div class="col-5">
+                  <input type="text" class="form-control" placeholder="Straße" formControlName="firmen_strControl" disabled>
+                </div>
+                <div class="col-1">
+                  <input type="text" class="form-control" placeholder="Nr." formControlName="firmen_nrControl" disabled>
+                </div>
+                <div class="col-2">
+                  <input type="text" class="form-control" placeholder="PLZ" formControlName="firmen_plzControl" disabled>
+                </div>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Ort" formControlName="firmen_ortControl" disabled>
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Arbeitgeberanschrift</label>
+                <div class="col-5">
+                  <input type="text" class="form-control" placeholder="Straße" formControlName="arbeitgeber_strControl" disabled>
+                </div>
+                <div class="col-1">
+                  <input type="text" class="form-control" placeholder="Nr." formControlName="arbeitgeber_nrControl" disabled>
+                </div>
+                <div class="col-2">
+                  <input type="text" class="form-control" placeholder="PLZ" formControlName="arbeitgeber_plzControl" disabled>
+                </div>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Ort" formControlName="arbeitgeber_ortControl" disabled>
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Telefonnummern (optional)</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Telefon" formControlName="telefonnummerControl">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Mobil" formControlName="mobilControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>E-Mail privat (optional)</label>
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="E-Mail privat" formControlName="privat_emailControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Privatadresse (optional)</label>
+                <div class="col-5">
+                  <input type="text" class="form-control" placeholder="Straße" formControlName="privat_strControl">
+                </div>
+                <div class="col-1">
+                  <input type="text" class="form-control" placeholder="Nr." formControlName="privat_nrControl">
+                </div>
+                <div class="col-2">
+                  <input type="text" class="form-control" placeholder="PLZ" formControlName="privat_plzControl">
+                </div>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Ort" formControlName="privat_ortControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Zugangsdaten</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Email" formControlName="emailControl" disabled>
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Password" formControlName="passwordControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Sicherheitscode</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Secret Code" formControlName="secretControl">
+                </div>
+              </div>
+              <br>
+                <div class="form-group row justify-content-end">
+                  <button type="submit" class='btn btn-outline lg' value="aktualisieren">Speichern</button>
+                  <button type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen
+                  </button>
+                </div>
+
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    <ng-template #loader>
+      <app-loader></app-loader>
+    </ng-template>
+    </body>
+    </div>

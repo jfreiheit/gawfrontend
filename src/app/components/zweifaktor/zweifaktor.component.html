@@ -1,0 +1,36 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+  <br>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-lg-5 col-md-7 mx-auto my-auto">
+      <div class="card">
+        <div class="card-body px-lg-5 py-lg-5 text-center">
+          <img src="../../../assets/security.png" class="rounded-circle avatar-lg img-thumbnail mb-4" alt="profile-image">
+          <h3 class="text-dark">ZWEI FAKTOR AUTHENTIFIZIERUNG</h3>
+          <br>
+          <form class="form-flex" [formGroup]="twoFactorForm" (ngSubmit)="verify()" novalidate>
+            <br>
+            <div class="form-group">
+              <label for="secret" class="mb-4">Hier Secret eingeben</label>
+              <input formControlName="secret" type="secret" placeholder="Secret"
+                     name="secret" id="secret" class="form-control" aria-required="true"
+                     required>
+            </div>
+            <br>
+          </form>
+          <form class="text-center">
+            <button id="weiterfa" class="btn btn-outline-info" type="submit" (click)="verify()">Weiter</button>
+            <br>
+            <br>
+            <button id="abbfa" class="btn btn-outline-info" [routerLink]="['/home']">Abbrechen</button>
+            <br>
+            <br>
+            <button id="forgotfa" class="btn btn-outline-info" [routerLink]="['/forgot-secret']">Secret vergessen?</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

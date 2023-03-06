@@ -1,0 +1,128 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+    <body *ngIf="isLoggedIn()">
+      <div class="card-body">
+        <div id="fallarbeitCoach">
+          <div class="row" > <!-- Bootstrap - Preloader -->
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="col">
+
+                <div>
+                  <div class="imageCoach">
+                    <img class="photocontainer h-auto"
+                         [src]="imagePreview"
+                         *ngIf="imagePreview">
+                  </div>
+                  <br>
+                  <input
+                    type="file"
+                    class="dn"
+                    (change)="onFileUpload($event)"
+                    #input
+                  >
+                  <button
+                    (click)="triggerClick()"
+                    type="button" class="waves-effect waves-light btn">
+
+                    Bild hochladen
+                  </button>
+                </div>
+
+              </div>
+              <br>
+              <br>
+
+              <div class="form-group row">
+                <label>Name des Coaches*</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Vorname" formControlName="vornameControl">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Name" formControlName="nameControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Kontaktadresse*</label>
+                <div class="col-5">
+                  <input type="text" class="form-control" placeholder="Straße"
+                         formControlName="kontaktadresse_strControl">
+                </div>
+                <div class="col-1">
+                  <input type="text" class="form-control" placeholder="Nr." formControlName="kontaktadresse_nrControl">
+                </div>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Ort" formControlName="kontaktadresse_ortControl">
+                </div>
+                <div class="col-2">
+                  <input type="text" class="form-control" placeholder="PLZ" formControlName="kontaktadresse_plzControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Telefonnummer*</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Telefon" formControlName="telefonnummerControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label>Rechnungsadresse (optional)</label>
+                <div class="col-5">
+                  <input type="text" class="form-control" placeholder="Straße"
+                         formControlName="rechnungsadresse_strControl">
+                </div>
+                <div class="col-1">
+                  <input type="text" class="form-control" placeholder="Nr."
+                         formControlName="rechnungsadresse_nrControl">
+                </div>
+                <div class="col-4">
+                  <input type="text" class="form-control" placeholder="Ort"
+                         formControlName="rechnungsadresse_ortControl">
+                </div>
+                <div class="col-2">
+                  <input type="text" class="form-control" placeholder="PLZ"
+                         formControlName="rechnungsadresse_plzControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row" *ngIf="!user">
+                <label>Zugangsdaten*</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Email" formControlName="emailControl">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Password" formControlName="passwordControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row" *ngIf="!user">
+                <label>Sicherheitcode*</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Secret Code" formControlName="secretControl">
+                </div>
+              </div>
+              <br>
+              <div class="form-group row" *ngIf="!user">
+                <label>Rechte des Coaches*</label>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Role" formControlName="roleControl">
+                </div>
+              </div>
+              <br>
+                <div class="form-group row justify-content-end">
+                  <button type="submit" class='btn btn-outline lg' value="aktualisieren">Speichern</button>
+                  <button type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen
+                  </button>
+                </div>
+
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    <ng-template #loader>
+      <app-loader></app-loader>
+    </ng-template>
+    </body>
+    </div>

@@ -1,0 +1,33 @@
+button:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+.container {
+  margin-bottom: 8%;
+}
+#trash{
+  float: right;
+}
+#headerstyle{
+  margin-top: 3%;
+}
+#überschrift{
+  text-align: center;
+  margin-top: 3%;
+}
+#überschrift1{
+  text-align: center;
+  margin-top: 3%;
+}
+#buttons{
+  text-align: right;
+  margin-top: 3%
+}
+button {
+  margin-top: 2%;
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+}
+

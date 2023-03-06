@@ -1,0 +1,135 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+    <div id="pdfvbamz2">
+        <h1>{{vereinbarungsMerkzettelTitle}}</h1>
+        <div class="card" id="vereinbarungcard1mz2">
+            <div class="card-body">
+              <form [formGroup]="form" >
+                    <h3>BEM-Berechtigte/r</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Aufgabe</th>
+                                <th scope="col">bis wann</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{vereinbarungsmerkzettel2Frage[0].frage}}</th>
+                                <td>
+                                    <div class="mb-3">
+                                        <label for="vereinbtbarea4" class="form-label"></label>
+                                        <textarea class="form-control" id="vereinbtbarea4" rows="5" formControlName="antwortControl"></textarea>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mb-3" id= "lastcol1">
+                                        <label for="vereinbartbdatum5" class="form-label">{{vereinbarungsmerkzettel2Frage[6].frage}}</label>
+                                        <input type="date" class="form-control" id="vereinbartbdatum5" formControlName="date" placeholder="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">{{vereinbarungsmerkzettel2Frage[1].frage}}</th>
+                                <td>
+                                    <div class="mb-3">
+                                        <label for="vereinbtbarea6" class="form-label"></label>
+                                        <textarea class="form-control" id="vereinbtbarea6" rows="5" formControlName="antwortControl1"></textarea>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mb-3" id= "lastcol2">
+                                        <label for="vereinbartbdatum7" class="form-label">{{vereinbarungsmerkzettel2Frage[7].frage}}</label>
+                                        <input type="date" class="form-control" id="vereinbartbdatum7" placeholder="" formControlName="date1">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">{{vereinbarungsmerkzettel2Frage[2].frage}}</th>
+                                <td>
+                                    <div class="mb-3">
+                                        <label for="vereinbtbarea8" class="form-label"></label>
+                                        <textarea class="form-control" id="vereinbtbarea8" rows="5" formControlName="antwortControl2"></textarea>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mb-3" id= "lastcol3">
+                                        <label for="vereinbartbdatum9" class="form-label">{{vereinbarungsmerkzettel2Frage[8].frage}}</label>
+                                        <input type="date" class="form-control" id="vereinbartbdatum9" placeholder="" formControlName="date2">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                  </table>
+                  <br />
+                  <h3>AFCoach&reg;</h3>
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th scope="col"></th>
+                              <th scope="col">Aufgabe</th>
+                              <th scope="col">bis wann</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <th scope="row">{{vereinbarungsmerkzettel2Frage[3].frage}}</th>
+                              <td>
+                                  <div class="mb-3">
+                                      <label for="vereinbtbarea1" class="form-label"></label>
+                                      <textarea class="form-control" id="vereinbtbarea1" rows="5" formControlName="antwortControl3"></textarea>
+                                  </div>
+                              </td>
+                              <td>
+                                  <div class="mb-3" id= "lastcol4">
+                                      <label for="vereinbartbdatum1" class="form-label">{{vereinbarungsmerkzettel2Frage[9].frage}}</label>
+                                      <input type="date" class="form-control" id="vereinbartbdatum1" placeholder="" formControlName="date3">
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <th scope="row">{{vereinbarungsmerkzettel2Frage[4].frage}}</th>
+                              <td>
+                                  <div class="mb-3">
+                                      <label for="vereinbtbarea2" class="form-label"></label>
+                                      <textarea class="form-control" id="vereinbtbarea2" rows="5" formControlName="antwortControl4"></textarea>
+                                  </div>
+                              </td>
+                              <td>
+                                  <div class="mb-3" id= "lastcol5">
+                                      <label for="vereinbartbdatum2" class="form-label">{{vereinbarungsmerkzettel2Frage[10].frage}}</label>
+                                      <input type="date" class="form-control" id="vereinbartbdatum2" placeholder="" formControlName="date4">
+                                  </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <th scope="row">{{vereinbarungsmerkzettel2Frage[5].frage}}</th>
+                              <td>
+                                  <div class="mb-3">
+                                      <label for="vereinbtbarea3" class="form-label"></label>
+                                      <textarea class="form-control" id="vereinbtbarea3" rows="5" formControlName="antwortControl5"></textarea>
+                                  </div>
+                              </td>
+                              <td>
+                                  <div class="mb-3" id= "lastcol6">
+                                      <label for="vereinbartbdatum3" class="form-label">{{vereinbarungsmerkzettel2Frage[11].frage}}</label>
+                                      <input type="date" class="form-control" id="vereinbartbdatum3" placeholder="" formControlName="date5">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+              </form>
+            </div>
+        </div>
+    </div>
+  <form>
+    <div class="form-group">
+      <button id="btnsavevbamz1" class='btn btn-outline lg' (click)="onSubmit()"
+              [routerLink]="['/formulare']">Speichern</button>
+      <button id="btnpdfvbamz2" class='btn btn-outline lg' value="pdf" (click)="generatePDF()">PDF erstellen</button>
+      <button id="btnsavevbamz2" class='btn btn-outline lg' value="weiter"
+              (click)="onSubmit()" [routerLink]="['/massnahmenentwicklung']">Weiter</button>
+    </div>
+  </form>
+</div>

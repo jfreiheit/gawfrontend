@@ -1,0 +1,66 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div id="pdfhz">
+      <br>
+      <br>
+      <br>
+      <h5> An die/den </h5>
+      <h5>Personalabteilung </h5>
+      <h5> BEM-Koordination </h5>
+      <h5> Betriebsrat </h5>
+      <h5> Steuerkreis BEM</h5>
+
+      <div class="col" id="col1">
+        <label for="datum3" class="form-label">{{hinweiszettelFragen[4].frage}}</label>
+        <input formControlName="dateControl" type="date" class="form-control" id="datum3" placeholder="">
+      </div>
+      <br>
+      <h1>{{hinweiszettelTitle}}</h1>
+      <div class="card" id="card10">
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col">
+              <label for="coachName2" class="form-label">{{hinweiszettelFragen[0].frage}}</label>
+              <input type="text" id="coachName2" class="form-control" placeholder="Name des Coaches" aria-label="Name des Coaches" formControlName="antwortControl">
+            </div>
+            <div class="col">
+              <label for="coachVorname2" class="form-label">{{hinweiszettelFragen[1].frage}}</label>
+              <input type="text" id="coachVorname2" class="form-control" placeholder="Vorname des Coaches" aria-label="Vorname des Coaches" formControlName="antwortControl1">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="textarea1" class="form-label"> {{hinweiszettelFragen[2].frage}}</label>
+            <textarea class="form-control" id="textarea1" rows="2" formControlName="antwortControl2"></textarea>
+          </div>
+          <br>
+          <div class="mb-3">
+            <label for="textarea2" class="form-label"> {{hinweiszettelFragen[3].frage}} </label>
+            <textarea class="form-control" id="textarea2" rows="8" formControlName="antwortControl3"></textarea>
+          </div>
+        </div>
+        <br>
+        <br>
+        <p> Wir bitten diese zu beachten und präventive Maßnahmen zur Verbesserung einzuleiten. </p>
+        <p> Bitte informieren Sie uns über das weitere Vorgehen.</p>
+
+        <p> Herzlichen Dank. </p>
+        <br>
+        <p> Mit freundlichen Grüßen</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p> (Kopie bitte für die eigenen Unterlagen behalten.) </p>
+      </div>
+    </div>
+  </form>
+  <form>
+    <div class="form-group">
+      <button id="btnsavehz" class= 'btn btn-outline lg' value ="Aktualisieren" (click)="onSubmit()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnsavehz1" type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen</button>
+      <button id="btnpdfhz" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,282 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Ressourcen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+    <div id="pdfallread">
+
+    <h4 id="title">{{stockwerkeTitle}}</h4>
+  <h5>4. Das Haus der Arbeitsfähigkeit: Inwieweit fördern oder verringern die folgenden Faktoren (Stockwerke + Umfeld) Ihre Arbeitsfähigkeit?</h5>
+  <h5>Die Stockwerke:</h5>
+  <form [formGroup]="form">
+    <div class="card" id="protokollcard1">
+      <div class="card">
+
+        <div class="card-header" role="tab" id="asCard1">
+          <button id="btnasCard1" (click)=toggleDisplayDiv1()> a. Gesundheit/Krankheit/Potenziale/Konstitution <i class="{{buttonLabel1}}" aria-hidden="true"></i></button>
+        </div>
+        <div class="card-body" *ngIf="CardOn1">
+          <div class="mb-3">
+            <label for="astextarea1" class="form-label">  {{this.stockwerkeFragen[0].frage}}</label>
+            <textarea formControlName="antwortControl" class="form-control" id="astextarea1" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea2" class="form-label">{{this.stockwerkeFragen[1].frage}}</label>
+            <textarea formControlName="antwortControl1" class="form-control" id="astextarea2" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea3" class="form-label"> {{this.stockwerkeFragen[2].frage}}</label>
+            <textarea formControlName="antwortControl2" class="form-control" id="astextarea3" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea4" class="form-label">{{this.stockwerkeFragen[3].frage}}</label>
+            <textarea formControlName="antwortControl3" class="form-control" id="astextarea4" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea5" class="form-label">{{this.stockwerkeFragen[4].frage}}</label>
+            <textarea formControlName="antwortControl4"  class="form-control" id="astextarea5" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea6" class="form-label">{{this.stockwerkeFragen[5].frage}}</label>
+            <textarea formControlName="antwortControl5"  class="form-control" id="astextarea6" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea7" class="form-label"> {{this.stockwerkeFragen[6].frage}}</label>
+            <textarea formControlName="antwortControl6"  class="form-control" id="astextarea7" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea8" class="form-label">{{this.stockwerkeFragen[7].frage}}</label>
+            <textarea formControlName="antwortControl7"  class="form-control" id="astextarea8" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+
+        <div class="card-header" role="tab" id="asCard2">
+          <button id="btnasCard2" (click)=toggleDisplayDiv2()> b. Kompetenz und Qualifikation <i class="{{buttonLabel2}}" aria-hidden="true"></i></button>
+        </div>
+        <div class="card-body" *ngIf="CardOn2">
+          <div class="mb-3">
+            <label for="astextarea9" class="form-label">{{this.stockwerkeFragen[8].frage}}</label>
+            <textarea formControlName="antwortControl8"  class="form-control" id="astextarea9" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea10" class="form-label">{{this.stockwerkeFragen[9].frage}}</label>
+            <textarea formControlName="antwortControl9"  class="form-control" id="astextarea10" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea11" class="form-label"> {{this.stockwerkeFragen[10].frage}}</label>
+            <textarea formControlName="antwortControl10"  class="form-control" id="astextarea11" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea12" class="form-label">{{this.stockwerkeFragen[11].frage}}</label>
+            <textarea formControlName="antwortControl11"  class="form-control" id="astextarea12" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea13" class="form-label">{{this.stockwerkeFragen[12].frage}}</label>
+            <textarea formControlName="antwortControl12"  class="form-control" id="astextarea13" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea14" class="form-label">{{this.stockwerkeFragen[13].frage}}</label>
+            <textarea formControlName="antwortControl13"  class="form-control" id="astextarea14" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea15" class="form-label">{{this.stockwerkeFragen[14].frage}}</label>
+            <textarea formControlName="antwortControl14"  class="form-control" id="astextarea15" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea16" class="form-label">{{this.stockwerkeFragen[15].frage}}</label>
+            <textarea formControlName="antwortControl15"  class="form-control" id="astextarea16" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+
+        <div class="card-header" role="tab" id="asCard3">
+          <button id="btnasCard3" (click)=toggleDisplayDiv3()> c. Werte/Einstellungen/Motivation <i class="{{buttonLabel3}}" aria-hidden="true"></i></button>
+        </div>
+        <div class="card-body" *ngIf="CardOn3">
+          <div class="mb-3">
+            <label for="astextarea17" class="form-label">{{this.stockwerkeFragen[16].frage}}</label>
+            <textarea formControlName="antwortControl16"  class="form-control" id="astextarea17" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea18" class="form-label">{{this.stockwerkeFragen[17].frage}}</label>
+            <textarea formControlName="antwortControl17" class="form-control" id="astextarea18" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea19" class="form-label">{{this.stockwerkeFragen[18].frage}}</label>
+            <textarea formControlName="antwortControl18"  class="form-control" id="astextarea19" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea20" class="form-label">{{this.stockwerkeFragen[19].frage}}</label>
+            <textarea formControlName="antwortControl19"  class="form-control" id="astextarea20" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea21" class="form-label">{{this.stockwerkeFragen[20].frage}}</label>
+            <textarea formControlName="antwortControl20"  class="form-control" id="astextarea21" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea22" class="form-label">{{this.stockwerkeFragen[21].frage}}</label>
+            <textarea formControlName="antwortControl21"  class="form-control" id="astextarea22" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea23" class="form-label">{{this.stockwerkeFragen[22].frage}}</label>
+            <textarea formControlName="antwortControl22"  class="form-control" id="astextarea23" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea24" class="form-label">{{this.stockwerkeFragen[23].frage}}</label>
+            <textarea formControlName="antwortControl23"  class="form-control" id="astextarea24" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-header" role="tab" id="asCard4">
+          <button id="btnasCard4" (click)=toggleDisplayDiv4()> d. Arbeitsbedingungen und Führung (Gruppe, Team, Aufbau- und Ablauforganisation, Mensch-Maschine) <i class="{{buttonLabel4}}" aria-hidden="true"></i></button>
+        </div>
+        <div class="card-body" *ngIf="CardOn4">
+          <div class="mb-3">
+            <label for="astextarea25" class="form-label">{{this.stockwerkeFragen[24].frage}}</label>
+            <textarea formControlName="antwortControl24"  class="form-control" id="astextarea25" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea26" class="form-label">{{this.stockwerkeFragen[25].frage}}</label>
+            <textarea formControlName="antwortControl25" class="form-control" id="astextarea26" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea27" class="form-label">{{this.stockwerkeFragen[26].frage}}</label>
+            <textarea formControlName="antwortControl26" class="form-control" id="astextarea27" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea28" class="form-label">{{this.stockwerkeFragen[27].frage}}</label>
+            <textarea formControlName="antwortControl27"  class="form-control" id="astextarea28" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea29" class="form-label">{{this.stockwerkeFragen[28].frage}}</label>
+            <textarea formControlName="antwortControl28"  class="form-control" id="astextarea29" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea30" class="form-label">{{this.stockwerkeFragen[29].frage}}</label>
+            <textarea formControlName="antwortControl29"  class="form-control" id="astextarea30" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea31" class="form-label"> {{this.stockwerkeFragen[30].frage}}</label>
+            <textarea formControlName="antwortControl30"  class="form-control" id="astextarea31" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea32" class="form-label">{{this.stockwerkeFragen[31].frage}}</label>
+            <textarea formControlName="antwortControl31"  class="form-control" id="astextarea32" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+
+        <div class="card-header" role="tab" id="asCard5">
+          <button id="btnasCard5" (click)=toggleDisplayDiv5()> e. Umfeld: Regionales, Familiäres, Persönliches, Soziales <i class="{{buttonLabel5}}" aria-hidden="true"></i></button>
+        </div>
+        <div class="card-body" *ngIf="CardOn5">
+          <div class="mb-3">
+            <label for="astextarea33" class="form-label">{{this.stockwerkeFragen[32].frage}}</label>
+            <textarea formControlName="antwortControl32" class="form-control" id="astextarea33" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea34" class="form-label">{{this.stockwerkeFragen[33].frage}}</label>
+            <textarea formControlName="antwortControl33"  class="form-control" id="astextarea34" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea35" class="form-label">{{this.stockwerkeFragen[34].frage}}</label>
+            <textarea formControlName="antwortControl34"  class="form-control" id="astextarea35" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea36" class="form-label">{{this.stockwerkeFragen[35].frage}}</label>
+            <textarea formControlName="antwortControl35"  class="form-control" id="astextarea36" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea37" class="form-label">{{this.stockwerkeFragen[36].frage}}</label>
+            <textarea formControlName="antwortControl36"  class="form-control" id="astextarea37" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea38" class="form-label">{{this.stockwerkeFragen[37].frage}}</label>
+            <textarea formControlName="antwortControl37" class="form-control" id="astextarea38" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea39" class="form-label">{{this.stockwerkeFragen[38].frage}}</label>
+            <textarea formControlName="antwortControl38"  class="form-control" id="astextarea39" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="astextarea40" class="form-label">{{this.stockwerkeFragen[39].frage}}</label>
+            <textarea formControlName="antwortControl39"  class="form-control" id="astextarea40" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" role="tab" id="asCard6">
+          <button id="btnasCard6" (click)=toggleDisplayDiv6()> {{this.stockwerkeFragen[40].frage}} <i class="{{buttonLabel6}}" aria-hidden="true"></i></button>
+        </div>
+        <div class="card-body" *ngIf="CardOn6">
+          <div class="mb-3">
+            <textarea formControlName="antwortControl40"  class="form-control" id="astextarea41" rows="7"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+
+
+    <div>
+      <form>
+      <button id="btnsavealypst" class= 'btn btn-outline lg' value ="Aktualisieren" (click)="update()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnsavealyp1" type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen</button>
+      <button id="btnpdfanalypst" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+      </form>
+    </div>
+  </div>
+  </body>
+  </html>
+

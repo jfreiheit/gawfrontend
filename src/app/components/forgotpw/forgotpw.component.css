@@ -1,0 +1,30 @@
+#submit {
+  margin-bottom: 5%;
+  margin-left: 45%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+
+}
+#submit:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+input {
+  width: 90%;
+  margin-left: 5%;
+}
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 5%; /* Added */
+}
+.container {
+  margin-top: 5%;
+  width: 50%;
+}
+.card-header{
+  border-color: black;
+  background-color: white;
+}

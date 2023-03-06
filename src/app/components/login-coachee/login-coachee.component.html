@@ -1,0 +1,36 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+  <div class="container-lg" style="width: 50%">
+  <form [formGroup]="loginForm" name="form" (ngSubmit)="login()" novalidate>
+    <div class="card-header" style="margin-top: 13%">
+      <h1 class="h3 mb-3 font-weight-normal">Anmelden</h1>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+      <label class="sr-only">E-Mail</label>
+      <br>
+      <input formControlName="email" type="email" placeholder="E-Mail"
+             name="email" id="email" class="form-control"
+             aria-required="true" required>
+        <br>
+        <label class="sr-only">Passwort</label>
+        <br>
+        <input formControlName="password" type="password" placeholder="Passwort"
+               name="password" id="password" class="form-control" aria-required="true"
+               required>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <button id="signin" class= 'btn btn-outline-info' type = "submit" value = "Login">Anmelden</button>
+        </div>
+        <div class="col">
+          <button id="resetpw" class="btn btn-outline-info" [routerLink]="['/forgot-password-coachee']">Passwort vergessen?</button>
+        </div>
+      </div>
+    <div class="col-lg" *ngFor="let alert of alerts">
+      <alert  (onClosed)="onCloseNotification(alert)">{{alert.msg }}</alert>
+    </div>
+  </form>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfvba">
+  <br>
+<h1> {{vereinbarungTitle}}</h1>
+<div class="card" id="card1" style="width: 80%" >
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <br>
+  <div class="col" >
+      <label for="nameBEM" class="form-label">Vereinbarung zwischen</label>
+    <p type="text" id="nameBEM" class="form-control"> {{coacheeVorname}} {{coacheeName}} </p>
+    <br>
+      <label for="nameCOACH" class="form-label">und </label>
+    <input type="input" class="form-control" id="nameCOACH" formControlName="antwortControl1" placeholder="">
+    <br>
+  </div>
+
+  <h4> Einleitung </h4>
+  <p>
+    Die Institut für Arbeitsfähigkeit GmbH ist mit Ihrem BEM-Prozess von {{coacheeUN}} beauftragt worden. Hierfür wird das Arbeitsfähigkeitscoaching® (AFCoaching®) genutzt. Das AFCoaching® ist ein Prozess, der die/den BEM-Berechtigte/n auf dem Weg in eine verbesserte Arbeits- und Beschäftigungsfähigkeit begleitet.
+    Das AFCoaching® hängt in besonderem Maß vom gegenseitigen Vertrauen zwischen BEM-Berechtigter/m und AFCoach&reg; ab. Daher verpflichtet sich der AFCoach&reg; dazu, alle Informationen streng vertraulich zu behandeln. Dies wird in einer separat unterschriebenen „Verpflichtung auf die Vertraulichkeit“ nochmals schriftlich festgehalten.
+  </p>
+  <br>
+  <h5 style="text-align: center">
+    Die/der BEM-Berechtigte ist im Coaching dazu bereit und offen, Verhaltensweisen und Werte – seien es die eigenen oder solche von Dritten – zu hinterfragen und sich mit der eigenen Person und der eigenen Arbeits- und Lebenssituation kritisch auseinanderzusetzen. Dies ist ein geeigneter Weg, nötige Veränderungen zu erkennen und diese anzustreben.
+  </h5>
+  <br>
+  <h4> Rechtliche Grundlage des BEM </h4>
+  <p>
+    § 167 Abs. 2 SGB IX: Sind Beschäftigte innerhalb eines Jahres länger als sechs Wochen ununterbrochen oder wiederholt arbeitsunfähig, klärt der Arbeitgeber mit der zuständigen Interessenvertretung im Sinne des § 176, bei schwerbehinderten Menschen außerdem mit der Schwerbehindertenvertretung, mit Zustimmung und Beteiligung der betroffenen Person die Möglichkeiten, wie die Arbeitsunfähigkeit möglichst überwunden werden und mit welchen Leistungen oder Hilfen erneuter Arbeitsunfähigkeit vorgebeugt und der Arbeitsplatz erhalten werden kann (betriebliches Eingliederungsmanagement). Beschäftigte können zusätzlich eine Vertrauensperson eigener Wahl hinzuziehen. Soweit erforderlich, wird der Werks- oder Betriebsarzt hinzugezogen. Die betroffene Person oder ihr gesetzlicher Vertreter ist zuvor auf die Ziele des betrieblichen Eingliederungsmanagements sowie auf Art und Umfang der hierfür erhobenen und verwendeten Daten hinzuweisen. Kommen Leistungen zur Teilhabe oder begleitende Hilfen im Arbeitsleben in Betracht, werden vom Arbeitgeber die Rehabilitationsträger oder bei schwerbehinderten Beschäftigten das Integrationsamt hinzugezogen. Diese wirken darauf hin, dass die erforderlichen Leistungen oder Hilfen unverzüglich beantragt und innerhalb der Frist des § 14 Absatz 2 Satz 2 erbracht werden. Die zuständige Interessenvertretung im Sinne des § 176, bei schwerbehinderten Menschen außerdem die Schwerbehindertenvertretung, können die Klärung verlangen. Sie wachen darüber, dass der Arbeitgeber die ihm nach dieser Vorschrift obliegenden Verpflichtungen erfüllt.
+  </p>
+  <p>
+    Der AFCoach&reg; begleitet die/den BEM-Berechtigte/n bei der Verbesserung seiner Arbeits- und Beschäfti- gungsfähigkeit. Das Coaching dient der Verwirklichung von Maßnahmen innerhalb des Betrieblichen Eingliederungsmanagements.
+  </p>
+  <br>
+  <h4>Verantwortung des AFCoachs&reg;</h4>
+  <p>
+    Der AFCoach&reg; verpflichtet sich, Informationen und Gesprächsinhalte des Prozesses nicht ohne Erlaubnis der/des BEM-Berechtigten weiterzugeben, sowie diese nur im Rahmen des AFCoachings® zu verwenden.
+  </p>
+  <p>
+    Schriftlich ausgehändigte Informationen sowie eigene Aufzeichnungen werden im Projektbetrieb in einem verschlossenen Schrank so verwahrt, dass kein Dritter Zugang zu diesen Daten hat.
+  </p>
+  <p>
+    Nach Beendigung des Coachings werden die Aufzeichnungen nach vier Jahren vernichtet.
+  </p>
+  <p>
+    Der AFCoach&reg; kann die Arbeitsfähigkeit der/des BEM-Berechtigten nicht selbst wiederherstellen bzw. erhalten und fördern. Ihre/Seine Aufgabe besteht aus der Begleitung und Beratung der/des BEM-Berechtigten, die eigentliche Veränderungsarbeit wird von der/dem Berechtigten selbst geleistet. Ein erfolgreicher Coachingprozess ist durch die Zusammenarbeit und das Engagement aller im BEM-Prozess Beteiligten geprägt.
+  </p>
+  <br>
+  <h4>Verantwortung des BEM-Berechtigten im AFCoaching®</h4>
+  <p>
+    Die/Der BEM-Berechtigte ist sich dessen bewusst, dass sie/er während des Coachingprozesses selbst für ihre/seine eigene körperliche und seelische Gesundheit verantwortlich ist.
+  </p>
+  <p>
+    Des Weiteren erkennt sie/er an, dass alle Maßnahmen und Schritte zur Verbesserung seiner Arbeits- und Beschäftigungsfähigkeit in ihrem/seinem eigenen Verantwortungsbereich liegen. Die/Der BEM-Berechtigte besitzt keinen Anspruch auf andere Beratungen des Coaches, die außerhalb des Themenbereichs des AFCoachings® liegen (Eheberatung, Schuldnerberatung etc.).
+  </p>
+  <br>
+  <h4>Inhalt der Vereinbarung zwischen BEM-Berechtigter/m und AFCoach&reg;</h4>
+  <p>
+    Am Anfang des Coachings wird gemeinsam ein Zeitplan ausgearbeitet. Der nächste Termin wird am Ende eines jeden Treffens bestätigt bzw. geändert. Kurzfristige Terminänderungen sind spätestens zwei Werktage vorher telefonisch oder per E-Mail abzusprechen. Das Arbeitsfähigkeitscoaching&reg; umfasst maximal zehn Treffen zwischen Coach und der/dem BEM-Berechtigten.
+  </p>
+  <br>
+  <h4>Beendigung des AFCoachings®</h4>
+  <p>
+    Das AFCoaching® endet mit dem Abschlussgespräch mit der/dem BEM-Berechtigten. In diesem wird das Angebot eines freiwilligen Nachhaltigkeitsgespräches gemacht. Dies ist nicht mehr Gegenstand des eigentlichen Coachings.
+  </p>
+  <p>
+    Die/Der BEM-Berechtigte sowie der AFCoach&reg; können bei nachvollziehbaren Gründen jederzeit den Coachingprozess beenden. Danach wird der/dem BEM-Berechtigten ein BEM ohne Coaching angeboten.
+  </p>
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col">
+      <label for="inputInhalt" class="form-label">{{vereinbarungFragen[0].frage}}</label>
+      <input type="input" class="form-control" id="inputInhalt" formControlName="antwortControl" placeholder="">
+    </div>
+    <div class="col">
+      <label for="inputInhalt1" class="form-label">{{vereinbarungFragen[1].frage}}</label>
+      <input type="date" class="form-control" id="inputInhalt1" formControlName="date" placeholder="">
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="row" id="vvsign">
+    <div class="col">
+      <div>
+        <app-signaturepad></app-signaturepad>
+        <p>______________________________________________________</p>
+        <p>Unterschrift BEM-Berechtige/r</p>
+      </div>
+      <small style="color: darkred; margin-left: 5%">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="row" id="vvsign2">
+    <div class="col">
+      <div>
+        <app-signaturepad></app-signaturepad>
+        <p>______________________________________________________</p>
+        <p>Unterschrift AFCoach&reg;</p>
+      </div>
+      <small style="color: darkred; margin-left: 5%">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+
+    </div>
+  </div>
+  <br>
+  </form>
+</div>
+</div>
+<div>
+  <form>
+  <button id="btnsavevba" class="btn btn-outline lg" value = "speichern" (click)="onSubmit()"
+          >Speichern</button>
+  <button id="btnpdfvba" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    <button id="btnsavevba1" class="btn btn-outline lg" value = "weiter" (click)="onSubmit()"
+            [routerLink]="['/analyseprotokoll']">Weiter</button>
+  </form>
+</div>
+</div>

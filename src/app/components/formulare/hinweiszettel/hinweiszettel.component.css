@@ -1,0 +1,87 @@
+input {
+  width: 90%;
+  margin-left: 5%;
+}
+#card10 {
+  margin-left: 10%;
+  margin-top: 2%;
+  width: 80%;
+  margin-bottom: 5%;
+}
+#card3 {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+label {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+textarea {
+  width: 90%;
+  margin-left: 5%;
+}
+.btn-group {
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#info {
+  margin-bottom: 3%;
+}
+
+#alter{
+  width: 25%;
+}
+p{
+  margin-left: 5%;
+}
+h3 {
+  margin-top: 3%;
+  margin-bottom: 1%
+}
+h5 {
+  margin-left: 12%;
+  text-align: start;
+  font-weight: normal;
+}
+h1{
+  text-align: center;
+}
+
+#col1 {
+  margin-left: 70%;
+  text-align: center;
+  width:250px;
+}
+
+#btnsavehz {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavehz:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+
+#btnpdfhz {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfhz:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}

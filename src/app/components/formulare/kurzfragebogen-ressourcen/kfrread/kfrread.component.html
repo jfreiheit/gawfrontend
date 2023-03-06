@@ -1,0 +1,756 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Ressourcen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <div class="card" id="rescard1">
+    <div class="card-header" id="reskrzfragenheader">
+      <h3>{{kurzfragebogenRessourcenTitle}}</h3>
+    </div>
+    <form [formGroup]="form" >
+      <div class="card-body">
+        <div class="card">
+          <div class="card-header" role="tab" id="Card01">
+            <button id="b1" (click)=toggleDisplayDiv1()> 1. Handlungsspielraum <i class="{{buttonLabel1}}" aria-hidden="true" ></i></button>
+          </div>
+          <div class="card-body" *ngIf="CardOn1">
+            <div class="title">Wenn Sie Ihre Tätigkeit insgesamt betrachten, inwieweit können Sie die Reihenfolge der Arbeitsschritte selbst bestimmen?</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>HS01a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group1" role="group" aria-label="Basic radio toggle button group">
+                  <input  type="radio" class="btn-check" value="sehr wenig" name="antwortControl" id="btnradio1" autocomplete="off" formControlName="antwortControl">
+                  <label class="btn btn-outline-dark" for="btnradio1">sehr wenig</label>
+
+                  <input type="radio" class="btn-check" value="ziemlich wenig" name="antwortControl" id="btnradio2" autocomplete="off" formControlName="antwortControl">
+                  <label class="btn btn-outline-dark" for="btnradio2">ziemlich wenig</label>
+
+                  <input  type="radio" class="btn-check" value="etwas" name="antwortControl" id="btnradio3" autocomplete="off" formControlName="antwortControl">
+                  <label class="btn btn-outline-dark" for="btnradio3">etwas</label>
+
+                  <input  type="radio" class="btn-check" value="ziemlich viel" name="antwortControl" id="btnradio4" autocomplete="off" formControlName="antwortControl">
+                  <label class="btn btn-outline-dark" for="btnradio4">ziemlich viel</label>
+
+                  <input  type="radio" class="btn-check" value="sehr viel" name="antwortControl" id="btnradio5" autocomplete="off" formControlName="antwortControl">
+                  <label class="btn btn-outline-dark" for="btnradio5">sehr viel</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>HS01b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group2" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl1"  value="sehr wenig" type="radio" class="btn-check" name="antwortControl1" id="btnradio11" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio11">sehr wenig</label>
+
+                  <input formControlName="antwortControl1" value="ziemlich wenig" type="radio" class="btn-check" name="antwortControl1" id="btnradio12" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio12">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl1" value="etwas"  type="radio" class="btn-check" name="antwortControl1" id="btnradio13" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio13">etwas</label>
+
+                  <input formControlName="antwortControl1" value="ziemlich viel" type="radio" class="btn-check" name="antwortControl1" id="btnradio14" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio14">ziemlich viel</label>
+
+                  <input formControlName="antwortControl1" value="sehr viel" type="radio" class="btn-check" name="antwortControl1" id="btnradio15" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio15">sehr viel</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Wie viel Einfluss haben Sie darauf, welche Arbeit Ihnen zugeteilt wird?</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>HS02a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group3" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl2" value="sehr wenig"  type="radio" class="btn-check" name="antwortControl2" id="btnradio21" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio21">sehr wenig</label>
+
+                  <input formControlName="antwortControl2" value="ziemlich wenig" type="radio" class="btn-check" name="antwortControl2" id="btnradio22" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio22">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl2" value="etwas" type="radio" class="btn-check" name="antwortControl2" id="btnradio23" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio23">etwas</label>
+
+                  <input formControlName="antwortControl2" value="ziemlich viel" type="radio" class="btn-check" name="antwortControl2" id="btnradio24" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio24">ziemlich viel</label>
+
+                  <input formControlName="antwortControl2" value="sehr viel" type="radio" class="btn-check" name="antwortControl2" id="btnradio25" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio25">sehr viel</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>HS02b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group4" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl3" value="sehr wenig"  type="radio" class="btn-check" name="antwortControl3" id="btnradio31" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio31">sehr wenig</label>
+
+                  <input formControlName="antwortControl3" value="ziemlich wenig" type="radio" class="btn-check" name="antwortControl3" id="btnradio32" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio32">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl3" value="etwas" type="radio" class="btn-check" name="antwortControl3" id="btnradio33" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio33">etwas</label>
+
+                  <input formControlName="antwortControl3" value="ziemlich viel" type="radio" class="btn-check" name="antwortControl3" id="btnradio34" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio34">ziemlich viel</label>
+
+                  <input formControlName="antwortControl3" value="sehr viel" type="radio" class="btn-check" name="antwortControl3" id="btnradio35" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio35">sehr viel</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Können Sie Ihre Arbeit selbstständig planen und einteilen?</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>HS03a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div  class="btn-group5" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl4" value="sehr wenig" type="radio" class="btn-check" name="antwortControl4" id="btnradio41" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio41">sehr wenig</label>
+
+                  <input formControlName="antwortControl4" value="ziemlich wenig"  type="radio" class="btn-check" name="antwortControl4" id="btnradio42" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio42">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl4" value="etwas" type="radio" class="btn-check" name="antwortControl4" id="btnradio43" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio43">etwas</label>
+
+                  <input formControlName="antwortControl4" value="ziemlich viel" type="radio" class="btn-check" name="antwortControl4" id="btnradio44" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio44">ziemlich viel</label>
+
+                  <input formControlName="antwortControl4" value="sehr viel" type="radio" class="btn-check" name="antwortControl4" id="btnradio45" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio45">sehr viel</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>HS03b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group6" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl5" value="sehr wenig" type="radio" class="btn-check" name="antwortControl5" id="btnradio51" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio51">sehr wenig</label>
+
+                  <input formControlName="antwortControl5" value="ziemlich wenig" type="radio" class="btn-check" name="antwortControl5" id="btnradio52" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio52">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl5" value="etwas" type="radio" class="btn-check" name="antwortControl5" id="btnradio53" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio53">etwas</label>
+
+                  <input formControlName="antwortControl5" value="ziemlich viel" type="radio" class="btn-check" name="antwortControl5" id="btnradio54" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio54">ziemlich viel</label>
+
+                  <input formControlName="antwortControl5" value="sehr viel" type="radio" class="btn-check" name="antwortControl5" id="btnradio55" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio55">sehr viel</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab" id="Card02">
+            <button id="b2" (click)=toggleDisplayDiv2()> 2. Soziale Rückendeckung <i class="{{buttonLabel2}}" aria-hidden="true" ></i></button>
+          </div>
+          <div class="card-body" *ngIf="CardOn2">
+            <div class="title">Ich kann mich auf meine Kolleginnen und Kollegen verlassen, wenn es bei der Arbeit schwierig wird.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>SR01a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group7" role="group" aria-label="Basic radio toggle button group">
+                  <input  formControlName="antwortControl6" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio61" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio61">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl6" value="trifft wenig zu"  type="radio" class="btn-check"  id="btnradio62" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio62">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl6" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio63" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio63">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl6" value="trifft überwiegend zu" type="radio" class="btn-check" id="btnradio64" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio64">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl6" value="trifft voll zu" type="radio" class="btn-check" id="btnradio65" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio65">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>SR01b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group8" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl7" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio71" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio71">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl7" value="trifft wenig zu" type="radio" class="btn-check" id="btnradio72" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio72">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl7" value="trifft mittelmäßig zu" type="radio" class="btn-check" id="btnradio73" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio73">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl7" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio74" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio74">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl7" type="radio" value="trifft voll zu" class="btn-check" id="btnradio75" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio75">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Ich kann mich auf meine Führungskraft verlassen, wenn es bei der Arbeit schwierig wird.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>SR02a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group9" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl8" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio81" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio81">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl8" value="trifft wenig zu" type="radio" class="btn-check" id="btnradio82" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio82">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl8" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio83" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio83">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl8" value="trifft überwiegend zu" type="radio" class="btn-check" id="btnradio84" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio84">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl8" value="trifft voll zu" type="radio" class="btn-check" id="btnradio85" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio85">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>SR02b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group10" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl9" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio91" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio91">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl9" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio92" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio92">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl9" value="trifft mittelmäßig zu" type="radio" class="btn-check" id="btnradio93" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio93">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl9" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio94" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio94">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl9" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio95" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio95">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Man hält in der Abteilung gut zusammen.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>SR03a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group11" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl10" value="sehr wenig"  type="radio" class="btn-check" id="btnradio101" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio101">sehr wenig</label>
+
+                  <input formControlName="antwortControl10" value="ziemlich wenig" type="radio" class="btn-check" id="btnradio102" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio102">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl10" value="etwas" type="radio" class="btn-check" id="btnradio103" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio103">etwas</label>
+
+                  <input formControlName="antwortControl10" value="ziemlich viel" type="radio" class="btn-check" id="btnradio104" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio104">ziemlich viel</label>
+
+                  <input formControlName="antwortControl10" value="sehr viel" type="radio" class="btn-check"  id="btnradio105" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio105">sehr viel</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>SR03b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group12" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl11" value="sehr wenig" type="radio" class="btn-check"  id="btnradio111" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio111">sehr wenig</label>
+
+                  <input formControlName="antwortControl11" value="ziemlich wenig" type="radio" class="btn-check"  id="btnradio112" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio112">ziemlich wenig</label>
+
+                  <input formControlName="antwortControl11" value="etwas" type="radio" class="btn-check" id="btnradio113" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio113">etwas</label>
+
+                  <input formControlName="antwortControl11" value="ziemlich viel" type="radio" class="btn-check"  id="btnradio114" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio114">ziemlich viel</label>
+
+                  <input formControlName="antwortControl11" value="sehr viel" type="radio" class="btn-check"  id="btnradio115" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio115">sehr viel</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab" id="Card03">
+            <button id="b3" (click)=toggleDisplayDiv3()> 3. Zusammenarbeit <i class="{{buttonLabel3}}" aria-hidden="true" ></i></button>
+          </div>
+          <div class="card-body" *ngIf="CardOn3">
+            <div class="title">Diese Arbeit erfordert enge Zusammenarbeit mit anderen Kolleginnen und Kollegen in der Organisation.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>ZA01a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group13" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl12" value="trifft gar nicht zu" type="radio" class="btn-check" id="btnradio121" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio121">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl12" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio122" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio122">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl12" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio123" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio123">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl12" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio124" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio124">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl12" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio125" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio125">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>ZA01b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group14" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl13" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio131" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio131">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl13" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio132" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio132">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl13" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio133" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio133">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl13" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio134" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio134">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl13" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio135" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio135">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Ich kann mich während der Arbeit mit verschiedenen Kolleginnen und Kollegen über dienstliche und private Dinge unterhalten.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>ZA02a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group15" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl14" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio141" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio141">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl14" value="trifft wenig zu" type="radio" class="btn-check" id="btnradio142" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio142">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl14" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio143" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio143">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl14" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio144" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio144">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl14" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio145" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio145">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>ZA02b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group16" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl15" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio161" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio161">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl15" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio162" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio162">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl15" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio163" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio163">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl15" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio164" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio164">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl15" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio165" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio165">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Ich bekomme von der Führungskraft, Kolleginnen und Kollegen immer Rückmeldung über die Qualität meiner Arbeit.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>ZA03a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group17" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl16" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio171" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio171">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl16" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio172" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio172">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl16" value="trifft mittelmäßig zu" type="radio" class="btn-check" id="btnradio173" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio173">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl16" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio174" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio174">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl16" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio175" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio175">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>ZA03b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group18" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl17" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio191" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio191">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl17" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio192" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio192">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl17" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio193" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio193">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl17" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio194" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio194">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl17" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio195" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio195">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab" id="Card04">
+            <button id="b4" (click)=toggleDisplayDiv4()> 4. Information und Mitsprache <i class="{{buttonLabel4}}" aria-hidden="true" ></i></button>
+          </div>
+          <div class="card-body" *ngIf="CardOn4">
+            <div class="title">Über wichtige Dinge und Vorgänge in unserer Organisation sind wir ausreichend informiert.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>IM01a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group19" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl18" value="trifft gar nicht zu" type="radio" class="btn-check" id="btnradio201" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio201">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl18" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio202" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio202">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl18" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio203" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio203">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl18" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio204" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio204">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl18" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio205" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio205">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>IM01b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group20" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl19" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio211" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio211">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl19" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio212" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio212">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl19" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio213" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio213">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl19" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio214" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio214">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl19" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio215" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio215">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Die Leitung unserer Organisation ist bereit, die Ideen und Vorschläge der Beschäftigten zu berücksichtigen.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>IM02a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group21" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl20" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio221" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio221">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl20" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio222" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio222">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl20" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio223" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio223">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl20" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio224" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio224">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl20" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio225" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio225">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>IM02b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group22" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl21" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio231" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio231">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl21" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio232" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio232">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl21" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio233" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio233">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl21" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio234" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio234">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl21" value="trifft voll zu" type="radio" class="btn-check" id="btnradio235" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio235">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab" id="Card05">
+            <button id="b5" (click)=toggleDisplayDiv5()> 5. Entwicklungsmöglichkeiten <i class="{{buttonLabel5}}" aria-hidden="true" ></i></button>
+          </div>
+          <div class="card-body" *ngIf="CardOn5">
+            <div class="title">Unser Unternehmen bietet gute Weiterbildungsmöglichkeiten.</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>EM01a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group23" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl22" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio241" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio241">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl22" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio242" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio242">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl22" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio243" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio243">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl22" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio244" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio244">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl22" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio245" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio245">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>EM01b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group24" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl23" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio251" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio251">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl23" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio252" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio252">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl23" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio253" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio253">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl23" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio254" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio254">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl23" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio255" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio255">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="title">Bei uns gibt es gute Aufstiegschancen (z.B. auch durch Erweiterung des bisherigen Tätigkeitsfeldes).</div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>EM02a</p>
+              </div>
+              <div class="col-1 ist">
+                <p>IST</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group25" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl24" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio261" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio261">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl24" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio262" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio262">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl24" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio263" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio263">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl24" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio264" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio264">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl24" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio265" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio265">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 kriteriumnr">
+                <p>EM02b</p>
+              </div>
+              <div class="col-1 soll">
+                <p>SOLL</p>
+              </div>
+              <div class="col-10">
+                <div class="btn-group26" role="group" aria-label="Basic radio toggle button group">
+                  <input formControlName="antwortControl25" value="trifft gar nicht zu" type="radio" class="btn-check"  id="btnradio271" autocomplete="off" >
+                  <label class="btn btn-outline-dark" for="btnradio271">trifft gar nicht zu</label>
+
+                  <input formControlName="antwortControl25" value="trifft wenig zu" type="radio" class="btn-check"  id="btnradio272" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio272">trifft wenig zu</label>
+
+                  <input formControlName="antwortControl25" value="trifft mittelmäßig zu" type="radio" class="btn-check"  id="btnradio273" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio273">trifft mittelmäßig zu</label>
+
+                  <input formControlName="antwortControl25" value="trifft überwiegend zu" type="radio" class="btn-check"  id="btnradio274" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio274">trifft überwiegend zu</label>
+
+                  <input formControlName="antwortControl25" value="trifft voll zu" type="radio" class="btn-check"  id="btnradio275" autocomplete="off">
+                  <label class="btn btn-outline-dark" for="btnradio275">trifft voll zu</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <form>
+      <button id="btnsavekzfbr" type="button" class="btn btn-outline-primary" (click)="onSubmit()" *ngIf="isLoggedIn()">Aktualisieren</button>
+      <button id="btnabbr" type="button" class="btn btn-outline lg" (click)="cancel() ">Abbrechen</button>
+      <button id="btnpdfkzfbr" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+    </form>
+  </div>
+  </body>
+  </html>
+</div>
+

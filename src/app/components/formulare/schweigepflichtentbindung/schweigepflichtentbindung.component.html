@@ -1,0 +1,86 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfspfe">
+    <br>
+    <h1>{{schweigepflichtentbindungTitle}}</h1>
+    <h4>(Quelle: Projekt Werkzeugkasten BEM 2011)</h4>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="card" id="card1">
+        <br>
+        <div class="row">
+          <div class="col">
+            <label for="inputInhalt" class="form-label">{{schweigepflichtentbindungFragen[0].frage}}</label>
+            <input type="text" id="inputInhalt" formControlName="antwortControl" class="form-control" placeholder="{{coacheeName}}">
+          </div>
+          <div class="col">
+            <label for="inputInhalt1" class="form-label">{{schweigepflichtentbindungFragen[1].frage}}</label>
+            <input type="text" id="inputInhalt1" formControlName="antwortControl1" class="form-control" placeholder="{{coacheeVorname}}">
+          </div>
+        </div>
+        <br>
+        <div class="row" >
+        <div class="col">
+          <label for="inputInhalt7" class="form-label">{{schweigepflichtentbindungFragen[7].frage}}</label>
+          <input type="date" class="form-control" id="inputInhalt7" formControlName="date" placeholder="">
+        </div>
+
+        <div class="col" style="width:250px">
+          <label for="inputInhalt2" class="form-label">{{schweigepflichtentbindungFragen[2].frage}}</label>
+          <input type="text" class="form-control" id="inputInhalt2" formControlName="antwortControl2" value="{{firmen_plz}}" placeholder="{{firmen_plz}}">
+        </div>
+
+        <div class="col" style="width:250px">
+          <label for="inputInhalt3" class="form-label">{{schweigepflichtentbindungFragen[3].frage}}</label>
+          <input type="input" class="form-control" id="inputInhalt3" formControlName="antwortControl3" value="{{firmen_ort}}" placeholder="{{firmen_ort}}">
+        </div>
+        </div>
+        <br>
+        <br>
+        <div class="col">
+          <label for="inputInhalt4" class="form-label">{{schweigepflichtentbindungFragen[4].frage}}</label>
+          <input type="input" class="form-control" id="inputInhalt4" formControlName="antwortControl4"
+                 placeholder="Bitte eintragen: Herrn / Frau XY oder Institution">
+        </div>
+        <br>
+        <div class="col">
+          <label for="inputInhalt5" class="form-label">{{schweigepflichtentbindungFragen[5].frage}}</label>
+          <input type="input" class="form-control" id="inputInhalt5" formControlName="antwortControl5"
+                 placeholder="Bitte eintragen: Herrn / Frau XY des Integrationsteams">
+        </div>
+        <br>
+        <br>
+        <p>
+          lch erkläre hiermit, dass alle meine Angaben freiwillig sind und ich zur Kenntnis genommen habe, dass ich
+          diese Einwilligung jederzeit widerrufen kann. Durch meine Unterschrift bestätige ich gleichzeitig den Empfang
+          einer Ausfertigung der Vereinbarung.
+        </p>
+        <div class="row">
+          <div class="col">
+            <label for="inputInhalt6" class="form-label">{{schweigepflichtentbindungFragen[6].frage}}</label>
+            <input type="input" class="form-control" id="inputInhalt6" formControlName="antwortControl6" placeholder="">
+          </div>
+          <div class="col">
+            <label for="inputInhalt8" class="form-label">{{schweigepflichtentbindungFragen[8].frage}}</label>
+            <input type="date" class="form-control" id="inputInhalt8" formControlName="date1" placeholder="">
+          </div>
+        </div>
+<br>
+<app-signaturepad></app-signaturepad>
+        <br>
+        <p id="line" style="font-weight: bold;text-align: start">____________________________________________</p>
+        <span>Unterschrift Mitarbeiter/in</span>
+        <small style="color: darkred; margin-left: 5%">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+        <br>
+      </div>
+    </form>
+  </div>
+  <div>
+  <form>
+      <button id="btnsavespfe" class= 'btn btn-outline lg' value = "speichern" (click)="onSubmit()"
+              >">Speichern</button>
+      <button id="btnpdfspfe" class='btn btn-outline lg' value="pdf" (click)="generatePDF()">PDF erstellen</button>
+      <button id="btnsavespfe1" class= 'btn btn-outline lg' value = "weiter" (click)="onSubmit()"
+              [routerLink]="['/vereinbarungsmerkzettel']">Weiter</button>
+  </form>
+</div>
+</div>

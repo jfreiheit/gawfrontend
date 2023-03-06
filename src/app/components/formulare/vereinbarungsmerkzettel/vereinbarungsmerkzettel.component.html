@@ -1,0 +1,140 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfvbamz1">
+    <h1>{{vereinbarungsmerkzettelTitle}}</h1>
+    <div class="card" id="vereinbarungcard1">
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <h3>BEM-Berechtigte/r</h3>
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Aufgabe</th>
+                <th scope="col">bis wann</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">{{vereinbarungsmerkzettelFragen[0].frage}}</th>
+                <td>
+                  <div class="mb-3">
+                    <label for="inputInhalt" class="form-label"></label>
+                    <textarea class="form-control" id="inputInhalt" formControlName="antwortControl"
+                              rows="5"></textarea>
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3" id="lastcol1">
+                    <label for="inputInhalt6" class="form-label">{{vereinbarungsmerkzettelFragen[6].frage}}</label>
+                    <input type="date" class="form-control" id="inputInhalt6" formControlName="date" placeholder="">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">{{vereinbarungsmerkzettelFragen[1].frage}}</th>
+                <td>
+                  <div class="mb-3">
+                    <label for="inputInhalt1" class="form-label"></label>
+                    <textarea class="form-control" id="inputInhalt1" formControlName="antwortControl1" rows="5"></textarea>
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3" id="lastcol2">
+                    <label for="inputInhalt7" class="form-label">{{vereinbarungsmerkzettelFragen[7].frage}}</label>
+                    <input type="date" class="form-control" id="inputInhalt7" formControlName="date1" placeholder="">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">{{vereinbarungsmerkzettelFragen[2].frage}}</th>
+                <td>
+                  <div class="mb-3">
+                    <label for="inputInhalt2" class="form-label"></label>
+                    <textarea class="form-control" id="inputInhalt2" formControlName="antwortControl2"
+                              rows="5"></textarea>
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3" id="lastcol3">
+                    <label for="inputInhalt8" class="form-label">{{vereinbarungsmerkzettelFragen[8].frage}}</label>
+                    <input type="date" class="form-control" id="inputInhalt8" formControlName="date2" placeholder="">
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <h3>AFCoach&reg;</h3>
+            <table class="table">
+              <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Aufgabe</th>
+                <th scope="col">bis wann</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">{{vereinbarungsmerkzettelFragen[3].frage}}</th>
+                <td>
+                  <div class="mb-3">
+                    <label for="inputInhalt3" class="form-label"></label>
+                    <textarea class="form-control" id="inputInhalt3" formControlName="antwortControl3"
+                              rows="5"></textarea>
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3" id="lastcol4">
+                    <label for="inputInhalt9" class="form-label">{{vereinbarungsmerkzettelFragen[9].frage}}</label>
+                    <input type="date" class="form-control" id="inputInhalt9" formControlName="date3" placeholder="">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">{{vereinbarungsmerkzettelFragen[4].frage}}</th>
+                <td>
+                  <div class="mb-3">
+                    <label for="inputInhalt4" class="form-label">{{vereinbarungsmerkzettelFragen[4].frage}}</label>
+                    <textarea class="form-control" id="inputInhalt4" formControlName="antwortControl4"
+                              rows="5"></textarea>
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3" id="lastcol5">
+                    <label for="inputInhalt10" class="form-label">{{vereinbarungsmerkzettelFragen[10].frage}}</label>
+                    <input type="date" class="form-control" id="inputInhalt10" formControlName="date4" placeholder="">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">{{vereinbarungsmerkzettelFragen[5].frage}}</th>
+                <td>
+                  <div class="mb-3">
+                    <label for="inputInhalt5" class="form-label"></label>
+                    <textarea class="form-control" id="inputInhalt5" formControlName="antwortControl5"
+                              rows="5"></textarea>
+                  </div>
+                </td>
+                <td>
+                  <div class="mb-3" id="lastcol6">
+                    <label for="inputInhalt11" class="form-label">{{vereinbarungsmerkzettelFragen[11].frage}}</label>
+                    <input type="date" class="form-control" id="inputInhalt11" formControlName="date5" placeholder="">
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        </form>
+      </div>
+    </div>
+  </div>
+    <form>
+      <div class="form-group">
+        <button id="btnsavevbamz1" class='btn btn-outline lg' value="speichern" (click)="onSubmit()"
+                [routerLink]="['/formulare']">Speichern</button>
+        <button id="btnpdfvbamz1" class='btn btn-outline lg' value="pdf" (click)="generatePDF()">PDF erstellen</button>
+        <button id="btnsavevbamz2" class='btn btn-outline lg' value="weiter"
+                (click)="onSubmit()" [routerLink]="['/vereinbarung']">Weiter</button>        
+      </div>
+    </form>
+</div>

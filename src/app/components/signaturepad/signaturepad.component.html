@@ -1,0 +1,17 @@
+<div class="row" id="dueunterschrift">
+  <div class="signature-container" *ngIf="!signatureImg">
+
+    <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+  </div>
+
+
+  <div class="signature-image" *ngIf="signatureImg">
+    <img src='{{ signatureImg }}' />
+  </div>
+
+  <div class="buttons" *ngIf="!signatureImg">
+   <button id="clearsig" class="btn btn-primary"(click)="clearSignature()">wiederholen</button>
+    <button id="savesig" class="btn btn-primary"(click)="savePad()">speichern</button>
+  </div>
+</div>
+

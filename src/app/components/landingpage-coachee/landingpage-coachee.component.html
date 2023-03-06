@@ -1,0 +1,52 @@
+<div *ngIf="isLoggedInCoachee()" class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+    <h1>Willkommen bei BEMdigital!</h1>
+    <div class="card" id="coacheecard1">
+        <p>
+        <span> Wir – </span><span id="coloredtext1">das Institut für Arbeitsfähigkeit</span><span> – möchten Ihnen als Teilnehmer/innen des  Arbeitsfähigkeitscoachings® eine digitale Plattform bieten, auf die Sie jederzeit zurückgreifen können und Informationen oder Unterstützung erhalten.</span>
+        </p>
+        <p>
+        <span>In der in der Praxis herrscht große Verunsicherung bzgl. der "richtigen" Vorgehensweise zum Thema Betriebliches Eingliederungsmanagement. Deshalb beraten und unterstützen wir Sie bei der Einführung professioneller Strukturen, der Optimierung sowie der Evaluierung Ihres BEM-Verfahrens.
+        BEMdigital richtet sich an die BEM-Berechtigten und ihre von uns zertifizierten Arbeitsfähigkeitscoaches </span><span id="coloredtext2">(Qualifizierung und Zertifizierung zum Arbeitsfähigkeitscoach® (AFCoach®))</span><span>. Wir unterstützen Sie bei der Wiederherstellung, dem Erhalt und der Förderung ihrer Gesundheit und Arbeitsfähigkeit.</span>
+        </p>
+        <p>
+        Die Plattform bietet Ihnen einen strukturierten und digitalen Leitfaden, um Ihr BEM durchzuführen und zu dokumentieren.
+        Wir unterstützen Sie bei der Umsetzung des BEM. Zudem reflektieren wir gemeinsam mit Ihnen Erfolge und Stolpersteine und entwickeln mit Ihnen eine Strategie für ein optimales weiteres Vorgehen.
+        </p>
+    </div>
+  <br>
+    <h4 style="margin-left: 25%">Shortcuts: Das möchte ich für das AFCoaching&reg; einsehen/bearbeiten: </h4>
+    <br>
+  <div class="row" id="buttonrow">
+        <div class=col>
+        <a href="/faq"><button class="button btn-sm" type="button">Ablauf des AFCoachings&reg; ansehen</button></a>
+        </div>
+        <div class=col>
+        <a href="/formulare"><button class="button btn-sm" type="button">Übersicht der Formulare für AFCoachings&reg;</button></a>
+        </div>
+        <div class=col>
+            <button class="button btn-sm" id="collapsbtn1" (click)=toggleDisplayDiv1()> Merkzettel für Vereinbarungen ansehen</button>
+            <div id="coacheebtncard1">
+            <div class="card-body" *ngIf="CardOn1" id="coacheeLinkWahl1">
+                <p><a [routerLink]="['/vereinbarungsmerkzettel']" id="linkmerk1">Merkzettel 1</a></p>
+                <p><a [routerLink]="['/vereinbarungsmerkzettel2']" id="linkmerk2">Merkzettel2</a></p>
+            </div>
+            </div>
+        </div>
+        <div class=col>
+            <button class="button btn-sm" type="button" [routerLink]="['/termine', coacheeId]">Termine für gemeinsame Fallarbeit ansehen</button>
+        </div>
+        <div class=col>
+            <button class="button btn-sm" id="collapsbtn2" (click)=toggleDisplayDiv2()> Maßnahmen</button>
+            <div id="coacheebtncard2">
+                <div class="card-body" *ngIf="CardOn2" id="coacheeLinkWahl2">
+                <p><a [routerLink]="['/massnahmenentwicklung']" id="linkmaß1">Maßnahmenentwicklung</a></p>
+                <p><a [routerLink]="['/massnahmenworkshop']" id="linkmaß2">Maßnahmenworkshop</a></p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+</div>

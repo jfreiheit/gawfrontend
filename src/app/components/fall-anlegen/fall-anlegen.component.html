@@ -1,0 +1,130 @@
+<div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+
+  <body *ngIf="isLoggedIn()">
+    <div class="card">
+      <h4 class="card-header" style="color: chocolate"> Kontaktformular </h4>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="vorname">Vorname</label>
+              <input type="text" class="form-control" aria-required="true" formControlName="vorname" id="vorname"
+                required>
+            </div>
+          </div>
+          <div class="form-group col">
+            <div class="col-sm-12">
+              <label for="name">Nachname</label>
+              <input type="text" class="form-control" formControlName="name" id="name" required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="firmenname">Firmenname</label>
+              <input type="text" class="form-control" aria-required="true" formControlName="firmenname" id="firmenname"
+                required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label>Firmen-Adressdaten</label>
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Straße" formControlName="firmen_str">
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="Nr." formControlName="firmen_nr">
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="PLZ" formControlName="firmen_plz">
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Ort" formControlName="firmen_ort">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="email">E-Mail</label>
+              <input type="text" class="form-control" aria-required="true" formControlName="email" id="email" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="telefonnummer"> Telefonnummer</label>
+              <input type="text" class="form-control" aria-required="true" formControlName="telefonnummer"
+                id="telefonnummer" required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="password">Passwort</label>
+              <input type="text" class="form-control" aria-required="true" formControlName="password" id="password"
+                required>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="secret">Secret</label>
+              <input type="text" class="form-control" aria-required="true" formControlName="secret" id="secret"
+                required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label>Arbeitgeberadresse (optional)</label>
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Straße" formControlName="arbeitgeber_str">
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="Nr." formControlName="arbeitgeber_nr">
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="PLZ" formControlName="arbeitgeber_plz">
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Ort" formControlName="arbeitgeber_ort">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label>Private Adressdaten (optional)</label>
+            <div class="col-5">
+              <input type="text" class="form-control" placeholder="Straße" formControlName="privat_str">
+            </div>
+            <div class="col-1">
+              <input type="text" class="form-control" placeholder="Nr." formControlName="privat_nr">
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="PLZ" formControlName="privat_plz">
+            </div>
+            <div class="col-4">
+              <input type="text" class="form-control" placeholder="Ort" formControlName="privat_ort">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="mobil">Mobil (optional)</label>
+              <input type="text" class="form-control" formControlName="mobil" id="mobil">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="privat_email">private E-Mail-Adresse (optional)</label>
+              <input type="text" class="form-control" formControlName="privat_email" id="privat_email">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button id="button" type="submit" class="btn btn-outline-primary"
+                [disabled]="!form.valid">Speichern</button>
+            </div>
+            <div class="col">
+              <button id="cancelButton" type="cancel" class="btn btn-outline-primary"
+                (click)="cancel()">Abbrechen</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</div>

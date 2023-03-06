@@ -1,0 +1,28 @@
+body{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+#button {
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+  margin-right:15%;
+  margin-top: 2%;
+}
+#button:hover {
+  background-color: white;
+  border-color: chocolate;
+  color: chocolate;}
+  
+button {
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;}
+
+button:hover {
+  background-color: white;
+  border-color: chocolate;
+  color: chocolate;}
+

@@ -1,0 +1,39 @@
+<body *ngIf="isLoggedIn()">
+  <div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+    <div>
+      <p> Hallo {{getFirstName()}}! Hier erhältst du eine Übersicht deiner Coachees:
+        <br>
+        <button id="buttonUnique" class="btn btn-primary" [routerLink]="['/fall-anlegen']">Neuen Coachee
+          anlegen</button>
+      </p>
+      <div class="container mt-3">
+        <div class="table-responsive">
+          <table class="m-3 table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th> E-Mail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let coachee of coachees; let i=index; ">
+                <td>{{ coachee.vorname }}</td>
+                <td>{{ coachee.name }}</td>
+                <td>{{coachee.email}}</td>
+                <td>
+                  <button class="btn btn-primary" routerLink="{{coachee._id}}">Fall anschauen</button>
+                </td>
+                <td>
+                  <button type="button" (click)="deleteCoachee(coachee._id)" class="btn btn-default btn-sm">
+                    <i-bs name="trash"></i-bs>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,106 @@
+h1 { margin-top: 3%;
+  text-align: center;
+}
+#card1 {
+  margin-left: 10%;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  width: 80%;
+}
+#card3 #card4{
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+label {
+  margin-top: 2%;
+}
+textarea {
+  width: 90%;
+  margin-left: 5%;
+}
+.btn-group {
+  margin-left: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#info {
+  margin-bottom: 3%;
+}
+
+#alter{
+  width: 25%;
+}
+p{
+  margin-left: 5%;
+}
+h3 {
+  margin-top: 3%;
+  margin-bottom: 1%
+}
+#addmw {
+  margin-top: 2%;
+  margin-left: 40%;
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+}
+#addmw:hover {
+  background-color: white;
+  border-color: chocolate;
+  color: chocolate;
+}
+#deletemw {
+  margin-left: 2%;
+  margin-bottom: 2%;
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+}
+
+#deletemw:hover,
+#btnsavemw:hover,
+#addmw:hover {
+  background-color: white;
+  border-color: chocolate;
+  color: chocolate;
+}
+
+#btnsavemw {
+  margin-bottom: 2%;
+  margin-left: 65%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfmasw {
+  margin-bottom: 2%;
+  margin-left: 78%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnpdfmasw:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+#btnsavemw1 {
+  margin-bottom: 2%;
+  margin-left: 3%;
+  width: 10%;
+  color: white;
+  border-color: chocolate;
+  background-color: chocolate;
+}
+
+#btnsavemw1:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}

@@ -1,0 +1,96 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100' *ngIf="isLoggedIn() || isLoggedInCoachee()">
+  <div id="pdfdsche">
+    <h1>{{datenschutzprotokollTitle}}</h1>
+    <h4>Verpflichtung auf die Vertraulichkeit</h4>
+    <div class="card" id="card1" style="width: 80%">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="card-body">
+
+        <div class="row" id="daten">
+          <p>
+            Die einschlägigen gesetzlichen Vorschriften verlangen, dass personenbezogene Daten so verarbeitet werden, dass die Rechte der durch die Verarbeitung betroffenen Personen auf Vertraulichkeit und Integrität ihrer Daten gewährleistet werden.
+            Daher ist es Ihnen auch nur gestattet, personenbezogene Daten in dem Umfang und in der Weise zu verarbeiten, wie es zur Erfüllung der Ihnen übertragenen Aufgaben erforderlich ist.
+            Nach diesen Vorschriften ist es untersagt, personenbezogene Daten unbefugt oder unrechtmäßig zu verarbeiten oder absichtlich oder
+            unabsichtlich die Sicherheit der Verarbeitung in einer Weise zu verletzen, die zur Vernichtung, zum Verlust, zur Veränderung, zu unbefugter Offenlegung oder unbefugtem Zugang führt.
+            Verstöße gegen die Datenschutzvorschriften können ggf. mit Geldbuße, Geldstrafe oder Freiheitsstrafe geahndet werden. Entsteht der betroffenen Person durch die unzulässige
+            Verarbeitung ihrer personenbezogenen Daten ein materieller oder immaterieller Schaden, kann ein Schadenersatzanspruch entstehen.
+            Ein Verstoß gegen die Vertraulichkeits- und Datenschutzvorschriften stellt einen Verstoß gegen arbeitsvertragliche Pflichten dar, der entsprechend geahndet werden kann.
+            Ihre Tätigkeit berührt das Fernmeldegeheimnis. Sie dürfen sich nicht über das erforderliche Maß hinaus Kenntnis vom Inhalt oder den näheren Umständen der Telekommunikation verschaffen.
+            Sie dürfen derartige Kenntnisse grundsätzlich nicht an Dritte weitergeben.
+            Die Verpflichtung auf die Vertraulichkeit besteht auch nach der Beendigung des Beschäftigungsverhältnisses fort.
+          </p>
+
+
+          <div class="row" id="daten2">
+
+            <p>
+              Die Verpflichtung auf die Vertraulichkeit und Integrität personenbezogener Daten mit den Vorgaben der geltenden Datenschutzvorschriften
+              habe ich zur Kenntnis genommen und bestätige deren Einhaltung. Ich bestätige zudem den Erhalt einer Kopie dieser Niederschrift und der Anlage.
+              Sie ist Bestandteil des Coachingvertrags zwischen
+            </p>
+            <div class="col">
+              <label for="vvcoachee10" class="form-label">BEM-Berechtige/r</label>
+              <input type="input" class="form-control" id="vvcoachee10" formControlName="antwortControl1" placeholder="">
+            </div>
+            <br>
+            <div class="col">
+              <label for="vvcoach11" class="form-label">AFCoach®</label>
+              <input type="input" class="form-control" id="vvcoach11" formControlName="antwortControl2" placeholder="">
+              <br>
+            </div>
+            <p> </p>
+            <div class="col" style="width:250px">
+              <br>
+              <br>
+              <br>
+
+              <div class="row">
+                <div class="col">
+                  <label for="inputInhalt" class="form-label">{{datenschutzprotokollFragen[0].frage}}</label>
+                  <input type="input" class="form-control" id="inputInhalt" formControlName="antwortControl" placeholder="">
+                </div>
+                <div class="col">
+                  <label for="inputInhalt1" class="form-label">{{datenschutzprotokollFragen[1].frage}}</label>
+                  <input type="date" class="form-control" id="inputInhalt1" formControlName="date" placeholder="">
+                </div>
+              </div>
+
+              <div class= "row" id="dueunterschrift">
+                <app-signaturepad></app-signaturepad>
+                <p style="font-weight: bold">____________________________________________</p>
+                <span>Unterschrift BEM-Berechtigte/r (Zur Kenntnisnahme)</span>
+                <br>
+                <small style="color: darkred">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+              </div>
+
+              <div class= "row" id="dueunterschrift2">
+                <app-signaturepad></app-signaturepad>
+                <p style="font-weight: bold">____________________________________________</p>
+                <span>Unterschrift AFCoach&reg;</span>
+                <br>
+                <small style="color: darkred">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+              </div>
+
+              <div class= "row" id="dueunterschrift3">
+                <app-signaturepad></app-signaturepad>
+                <p style="font-weight: bold">____________________________________________</p>
+                <span>Unterschrift Supervision</span>
+                <br>
+                <small style="color: darkred">* Achtung, die Unterschrift wird nach dem Verlassen der Seite gelöscht. Sie kann aber mit in der PDF heruntergeladen werden.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+    <form>
+      <button id="btnsavedsche" class= "btn btn-outline lg" value = "speichern" (click)="onSubmit()"
+          >">Speichern</button>
+      <button id="btnpdfdsche" class= 'btn btn-outline lg' value = "pdf" (click)="generatePDF()">PDF erstellen</button>
+      <button id="btnsavedsche1" class="btn btn-outline lg" value = "weiter" (click)="onSubmit()"
+            [routerLink]="['/datenschutz2']">Weiter</button>
+    </form>
+</div>

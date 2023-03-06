@@ -1,0 +1,45 @@
+<body *ngIf="isLoggedIn() && role == 'admin'">
+  <div class='row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+    <div>
+
+      <p *ngIf="role=='coach'"> Sie haben keine Zugriffsrechte</p>
+      <p> Hallo {{getFirstName()}}! Hier erhältst du eine Übersicht aller Coaches:
+        <br>
+        <button id="button" class="btn btn-primary" [routerLink]="['/user-register']" (click)="create()">Neuen Coach
+          anlegen
+        </button>
+      </p>
+
+      <div class="container mt-3">
+        <div class="table-responsive">
+          <table class="m-3 table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>E-Mail</th>
+                <th>Rolle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.vorname }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.role}}</td>
+                <td>
+                  <button class="btn btn-primary" routerLink="{{user._id}}">Coachdaten anschauen</button>
+                </td>
+                <td>
+                  <button type="button" (click)="delete(user._id)" class="btn btn-default btn-sm">
+                    <i-bs name="trash"></i-bs>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

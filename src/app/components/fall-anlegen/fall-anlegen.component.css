@@ -1,0 +1,43 @@
+body{
+  position: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card {
+  position: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.form-group {
+  margin-bottom: 2%;
+}
+
+#button {
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+  margin-right: 2%;
+  margin-left: 60%;
+}
+
+#cancelButton{
+  background-color: chocolate;
+  border-color: chocolate;
+  color: white;
+  margin-right: 2%
+}
+
+#cancelButton:hover, #button:hover {
+  border-color: chocolate;
+  background-color: white;
+  color: chocolate;
+}
+

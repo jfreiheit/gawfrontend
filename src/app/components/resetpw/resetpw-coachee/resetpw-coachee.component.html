@@ -1,0 +1,32 @@
+<div class = 'row m-0 w-100 d-flex flex-column sticky-footer-wrapper min-vh-100'>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <h2>Passwort zurücksetzen</h2>
+        <p>Bitte erstellen Sie Ihr neues Passwort:</p>
+      </div>
+      <div class="col-12">
+        <form class="form-flex" [formGroup]="resetForm" (ngSubmit)="reset()" >
+          <div class="form-group">
+            <input formControlName="password" type="password" placeholder="Passwort" name="password" id="password" class="form-control" aria-required="true" required>
+            <div class="validator-message" *ngIf="resetForm.get('password').hasError('hasNumber')">Eine Nummer</div>
+            <div class="validator-message" *ngIf="resetForm.get('password').hasError('hasCapitalCase')">Einen Großbuchstaben</div>
+            <div class="validator-message" *ngIf="resetForm.get('password').hasError('hasSmallCase')">Einen Kleinbuchstaben</div>
+            <div class="validator-message" *ngIf="resetForm.get('password').hasError('hasSpecialCharacters')">Ein Zeichen</div>
+            <div class="validator-message" *ngIf="resetForm.get('password').hasError('minlength')">Mindestens 8 Ziffern</div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input formControlName="confirmPassword" type="password" placeholder="Passwort bestätigen" name="confirmPassword" id="confirmPassword" class="form-control" aria-required="true" required>
+            <div class="validator-message" *ngIf="resetForm.get('confirmPassword').hasError('validator')">Die Passwörter stimmen nicht überein.</div>
+          </div>
+          <br>
+          <button class="btn btn-lg btn-dark btn-block" type="submit">Zurücksetzen</button>
+        </form>
+        <br>
+        <div class="col-12 text-center" *ngFor="let alert of alerts"><alert (onClosed)="onCloseNotification(alert)">{{alert.msg }}</alert></div>
+      </div>
+    </div>
+  </div>
+</div>
+
